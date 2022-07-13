@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 const Header = (): JSX.Element => {
   return (
     <>
-      <div className="flex flex-wrap justify-center bg-slate-900 ">
+      <div className="flex flex-wra justify-center bg-slate-900  shadow-md">
         <Link href="/" className=" cursor-pointer">
           <img
             src="https://res.cloudinary.com/dtycp96d8/image/upload/v1657723013/89814f856c3047c1b6705124d50f75f4_7_xxtbci.png"

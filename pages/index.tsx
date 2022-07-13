@@ -110,7 +110,7 @@ const Home: NextPage = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <button type="submit" className="bg-blue-600 p-1  text-white rounded">
-            go
+            <i className="fas fa-search"></i>
           </button>
         </form>
       </div>

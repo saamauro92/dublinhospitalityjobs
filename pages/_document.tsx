@@ -14,6 +14,11 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches&display=optional"
           />
+          <script
+            async
+            src="https://kit.fontawesome.com/7b8f9cbbbf.js"
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />
