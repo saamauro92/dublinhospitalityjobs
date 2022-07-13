@@ -122,14 +122,14 @@ const Home: NextPage = () => {
       </div>
 
       <div className="lg:mt-1 lg:mx-20 xl:w-6/12  lg:pt-10 lg:px-2  h-auto mb-10">
-        {" "}
-        {/*  ? ADD BORDER ??  */}
         {foundJobs && foundJobs.length > 0 ? (
           foundJobs
             .slice(0, 20)
             .map((job, index) => <Job data={job} key={index} />)
         ) : (
-          <h1>No results found!</h1>
+          <div className="mx-4 my-4 mb-14 pb-12 border-b-2">
+            <h2 className="font-semibold text-md my-2 ">No results found! </h2>
+          </div>
         )}
       </div>
     </Layout>
