@@ -8,11 +8,11 @@ type Props = {
 
 const Layout = ({ children }: Props): JSX.Element => {
   return (
-    <section className="mb-40">
+    <div className=" ">
       <NavBar />
       <Header />
       {children}
-    </section>
+    </div>
   );
 };
 
