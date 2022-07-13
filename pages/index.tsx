@@ -5,7 +5,6 @@ import { useState } from "react";
 import "tw-elements";
 import Layout from "../components/App/Layout";
 import Job from "../components/Job";
-import JobsList from "../components/JobsList";
 
 const Home: NextPage = () => {
   const jobs = [
