@@ -3,8 +3,8 @@ import Link from "next/link";
 const NavBar = (): JSX.Element => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg  py-2 bg-slate-900 relative flex items-center w-full justify-center">
-        <div className=" lg:ml-auto px-6 ">
+      <nav className="navbar navbar-expand-lg   px-4 py-2 bg-slate-900 w-full relative flex  justify-end ">
+        <div className=" lg:mt-1 lg:mx-20  lg:px-2  h-auto ">
           <Link href="/post">
             <button
               type="button"
