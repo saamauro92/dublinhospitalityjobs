@@ -121,11 +121,11 @@ const Home: NextPage = () => {
         </h1>
       </div>
 
-      <div className="lg:mt-1 lg:mx-20 xl:w-6/12  lg:pt-10 lg:px-2  h-auto mb-10">
+      <div className="lg:mt-1 lg:mx-20 xl:w-6/12 lg:px-2  h-auto mb-">
         {foundJobs && foundJobs.length > 0 ? (
           foundJobs
             .slice(0, 20)
-            .map((job, index) => <Job data={job} key={index} />)
+            .map((job, index) => <Job data={job} key={index} index={index} />)
         ) : (
           <div className="mx-4 my-4 mb-14 pb-12 border-b-2">
             <h2 className="font-semibold text-md my-2 ">No results found! </h2>
