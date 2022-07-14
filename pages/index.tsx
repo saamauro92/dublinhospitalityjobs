@@ -2,7 +2,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
-import "tw-elements";
+
 import Layout from "../components/App/Layout";
 import Job from "../components/Job";
 
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
       <div className="text-center  text-blue-600 font-bold  text-2xl pt-8 pb-2 px-6">
         <form onSubmit={handleSearch}>
           <input
-            className="px-2 shadow-md rounded py-1 w-80 mt-8 font-thin"
+            className="px-2 shadow-md rounded text-gray-600 py-1 w-80 mt-8 font-thin focus:outline-0"
             placeholder="Search"
             type="search"
             value={name}
