@@ -3,6 +3,9 @@ import Link from "next/link";
 import React, { ReactNode } from "react";
 
 const Header = (): JSX.Element => {
+  const phrase =
+    "Your most unhappy customers are your greatest source of learning.” -Bill Gates";
+
   return (
     <>
       <div className="text-center bg-slate-900  shadow-md">
@@ -15,8 +18,7 @@ const Header = (): JSX.Element => {
         </Link>
 
         <h2 className="text-gray-300 font-bold pb-3 ">
-          “Your most unhappy customers are your greatest source of learning.” -
-          Bill Gates
+          {phrase.toUpperCase()}
         </h2>
       </div>
     </>
