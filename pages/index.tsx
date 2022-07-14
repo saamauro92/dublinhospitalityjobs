@@ -100,7 +100,7 @@ const Home: NextPage = () => {
   };
   return (
     <Layout>
-      <div className="text-center  text-blue-600 font-bold  text-2xl  py-10 px-6">
+      <div className="text-center  text-blue-600 font-bold  text-2xl pt-8 pb-2 px-6">
         <form onSubmit={handleSearch}>
           <input
             className="px-2 shadow-md rounded py-1 w-80 mt-8 font-thin"
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
         </h1>
       </div>
 
-      <div className="lg:mt-1 lg:mx-20 xl:w-6/12 lg:px-2  h-auto ">
+      <div className="lg:mt-1 lg:mx-20 xl:w-6/12 lg:px-2  h-auto mb-20">
         {foundJobs && foundJobs.length > 0 ? (
           foundJobs
             .slice(0, 20)
