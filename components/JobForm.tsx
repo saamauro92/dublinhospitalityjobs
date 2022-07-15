@@ -10,12 +10,12 @@ const JobForm = (): JSX.Element => {
             Post A Job
           </h5>
           <p className="text-xl font-light leading-relaxed mt-6 mb-4 text-gray-800">
-            - You can email us your job description to
-            jobs@dublinhospitalityjobs.com.
+            - You can submit your job description using the form below.
           </p>
           <p className="text-xl font-light leading-relaxed  mb-4 text-gray-800">
-            - you can submit the form below.
+            - Or you can email us your job to jobs@dublinhospitalityjobs.com.
           </p>
+
           <div className="flex justify-between mt-10">
             <div className="mb-3 xl:w-96">
               <label
@@ -51,7 +51,7 @@ const JobForm = (): JSX.Element => {
             <div className="mb-3 xl:w-80">
               <p className="mb-3"> Select your ad type</p>
               <select
-                className="form-select appearance-none block w-full px-3 py-1.5  text-base  font-normal  text-gray-700  bg-white bg-clip-padding bg-no-repeat  border border-solid border-gray-300  rounded  transition  ease-in-out  m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                className="form-select appearance-none w-96 block w-full px-3 py-1.5  text-base  font-normal  text-gray-700  bg-white bg-clip-padding bg-no-repeat  border border-solid border-gray-300  rounded  transition  ease-in-out  m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
                 {/*     <option selected>Select Ad Type</option> */}
