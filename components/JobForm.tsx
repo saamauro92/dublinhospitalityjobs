@@ -16,8 +16,8 @@ const JobForm = (): JSX.Element => {
             - Or you can email us your job to jobs@dublinhospitalityjobs.com.
           </p>
 
-          <div className="flex justify-between mt-10">
-            <div className="mb-3 xl:w-96">
+          <div className="flex flex-wrap justify-between mt-10">
+            <div className="mb-3 w-80">
               <label
                 htmlFor="exampleFormControlInput1"
                 className="form-label inline-block mb-2 text-gray-700"
@@ -31,7 +31,7 @@ const JobForm = (): JSX.Element => {
                 placeholder=""
               />
             </div>
-            <div className="mb-3 xl:w-96">
+            <div className="mb-3 w-80">
               <label
                 htmlFor="exampleFormControlInput1"
                 className="form-label inline-block mb-2 text-gray-700"
@@ -47,11 +47,11 @@ const JobForm = (): JSX.Element => {
             </div>
           </div>
           <RichEditor />
-          <div className="flex mt-20 ">
-            <div className="mb-3 xl:w-80">
+          <div className="flex mt-20 pt-20 md:pt-0 ">
+            <div className="mb-3 w-80">
               <p className="mb-3"> Select your ad type</p>
               <select
-                className="form-select appearance-none w-96 block w-full px-3 py-1.5  text-base  font-normal  text-gray-700  bg-white bg-clip-padding bg-no-repeat  border border-solid border-gray-300  rounded  transition  ease-in-out  m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                className="form-select appearance-none w-full   block  px-3 py-1.5  text-base  font-normal  text-gray-700  bg-white bg-clip-padding bg-no-repeat  border border-solid border-gray-300  rounded  transition  ease-in-out  m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
                 {/*     <option selected>Select Ad Type</option> */}
