@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Footer from "./Footer";
 import Header from "./Header";
 import NavBar from "./NavBar";
 
@@ -12,6 +13,7 @@ const Layout = ({ children }: Props): JSX.Element => {
       <NavBar />
       <Header />
       {children}
+      <Footer />
     </div>
   );
 };
