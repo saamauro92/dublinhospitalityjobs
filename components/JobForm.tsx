@@ -144,7 +144,12 @@ const JobForm = (): JSX.Element => {
               />
             </div>
 
-            <p className="mt-7"> Enter job description.</p>
+            <label
+              htmlFor="exampleFormControlInput1"
+              className="form-label inline-block mb-2 text-gray-700"
+            >
+              Job Title:
+            </label>
 
             <RichEditor setDescription={setDescription} />
             <div className="flex mt-20 pt-20 md:pt-0 ">
@@ -171,7 +176,7 @@ const JobForm = (): JSX.Element => {
             <div className="flex  mt-10">
               <button
                 type="button"
-                className="mb-2 w-96 inline-block px-6 py-2.5 bg-blue-600 text-white font-bold text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                className="mb-2 w-80 inline-block px-6 py-2.5 bg-blue-600 text-white font-bold text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 onClick={handleSubmit}
               >
                 {loading ? (
