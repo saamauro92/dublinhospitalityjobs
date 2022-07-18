@@ -5,83 +5,13 @@ import { useState } from "react";
 
 import Layout from "../components/App/Layout";
 import Job from "../components/Job";
+import { JobTypes } from "../types/types";
 
-const Home: NextPage = () => {
-  const jobs = [
-    {
-      id: 1,
-      title: "Barista Full Time - ",
-      location: "dublin 3",
-      description:
-        " Lorem ipsum dolor sit html amet consecteturetur adipi adipisicing elit. Qui odi   omnis  quaerat? Tenetur. officiis nostrum voluptates modi praesentium rerum totam ab",
-      rate: "13.00 Per hour",
-      start: "now",
-    },
-    {
-      id: 2,
-      title: "Cleaner Part Time  ",
-      location: "dublin 3",
-      description:
-        "Cleaner Part Time  Lorem ipsum dolor sit amet consecteturetur adipi adipisicing elit. Qui odi   omnis  quaerat? Tenetur. officiis nostrum voluptates modi praesentium rerum totam ab",
-      rate: "11.00 Per hour",
-      start: "now",
-    },
-    {
-      id: 3,
-      title: "Barwoman - Full Time  ",
-      location: "dublin 3",
-      description:
-        " Barwoman - Full Time Lorem ipsum dolor sit amet html consecteturetur adipi adipisicing elit. Qui odi   omnis  quaerat? Tenetur. officiis nostrum voluptates modi praesentium rerum totam ab",
-      rate: "12.00 Per hour",
-      start: "now",
-    },
-    {
-      id: 4,
-      title: "shop assistance - Full Time  ",
-      location: "dublin 3",
-      description:
-        "  shop assistance - Full Time Lorem ipsum dolor sit amet consecteturetur adipi adipisicing elit. Qui odi   omnis  quaerat? Tenetur. officiis nostrum voluptates modi praesentium rerum totam ab",
-      rate: "12.00 Per hour",
-      start: "now",
-    },
-    {
-      id: 1,
-      title: "Barista Full Time - ",
-      location: "dublin 3",
-      description:
-        " Barista Full Time -  Lorem ipsum dolor sit html amet consecteturetur adipi adipisicing elit. Qui odi   omnis  quaerat? Tenetur. officiis nostrum voluptates modi praesentium rerum totam ab",
-      rate: "13.00 Per hour",
-      start: "now",
-    },
-    {
-      id: 2,
-      title: "Cleaner Part Time  ",
-      location: "dublin 3",
-      description:
-        " Cleaner Part Time  Lorem ipsum dolor sit amet consecteturetur adipi adipisicing elit. Qui odi   omnis  quaerat? Tenetur. officiis nostrum voluptates modi praesentium rerum totam ab",
-      rate: "11.00 Per hour",
-      start: "now",
-    },
-    {
-      id: 3,
-      title: "Barwoman - Full Time  ",
-      location: "dublin 3",
-      description:
-        " Barwoman - Full Time Lorem ipsum dolor sit amet html consecteturetur adipi adipisicing elit. Qui odi   omnis  quaerat? Tenetur. officiis nostrum voluptates modi praesentium rerum totam ab",
-      rate: "12.00 Per hour",
-      start: "now",
-    },
-    {
-      id: 4,
-      title: "shop assistance - Full Time  ",
-      location: "dublin 3",
-      description:
-        " shop assistance - Full Time - css Lorem ipsum dolor sit amet consecteturetur adipi adipisicing elit. Qui odi   omnis  quaerat? Tenetur. officiis nostrum voluptates modi praesentium rerum totam ab",
-      rate: "12.00 Per hour",
-      start: "now",
-    },
-  ];
+interface Props {
+  jobs: JobTypes[];
+}
 
+const Home = ({ jobs }: Props) => {
   const [name, setName] = useState("");
   const [foundJobs, setFoundJobs] = useState(jobs);
 
@@ -91,7 +21,9 @@ const Home: NextPage = () => {
 
     if (keyword !== "") {
       const results = jobs.filter((job) => {
-        return job.description.toLowerCase().includes(keyword.toLowerCase());
+        return job.attributes.description
+          .toLowerCase()
+          .includes(keyword.toLowerCase());
       });
       setFoundJobs(results);
     } else {
@@ -137,3 +69,17 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const res = await fetch(
+    "https://dublinhospitalityjobs-backend.herokuapp.com/api/jobs"
+  );
+  const jobsdata = await res.json();
+  const jobs = jobsdata.data;
+
+  return {
+    props: {
+      jobs,
+    },
+  };
+}

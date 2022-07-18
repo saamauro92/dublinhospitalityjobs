@@ -1,12 +1,18 @@
 
 
 export interface JobTypes {
-    id: number;
-    location: string;
-    title: string;
-    description: string;
-    rate: string;
-    start: string;
+  id: number,
+  attributes: {
+    title: string,
+    description: string,
+    type: string,
+    location: string,
+    company: string,
+    email: string,
+    date: string,
+    createdAt: string,
+    updatedAt: string,
+  
   }
 
 

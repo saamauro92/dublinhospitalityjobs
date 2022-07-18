@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { JobTypes } from "../types/types";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 type Props = {
   data: JobTypes;
@@ -16,29 +17,31 @@ const Job = ({ data, index }: Props): JSX.Element => {
             : "mx-4 flex flex-col justify-center py-5 border-b-2 "
         }
       >
-        <Link href={`/jobs/${data.title}`}>
+        <Link href={`/jobs/${data.attributes.title}`}>
           <h2 className="font-semibold text-md my-2 capitalize cursor-pointer">
             {" "}
-            {data.title}{" "}
+            {data.attributes.title}{" "}
           </h2>
         </Link>
         <div className="flex space-x-2 items-en  items-baseline ">
           <i className="fas fa-map-marker-alt"></i>
-          <p className=" text-md my-2 capitalize ">{data.location}</p>
+          <p className=" text-md my-2 capitalize ">
+            {data.attributes.location}
+          </p>
         </div>
         <div className="flex space-x-2 items-en  items-baseline ">
           <i className="fas fa-euro-sign"></i>
 
-          <p className=" text-md my-2 capitalize">{data.rate}</p>
+          <p className=" text-md my-2 capitalize">{data.attributes.rate}</p>
         </div>
 
-        <p className=" text-md my-2  capitalize">{data.description}</p>
+        <ReactMarkdown>{data.attributes.description}</ReactMarkdown>
 
         <div>
           <p className=" text-md my-2 capitalize float-left">
-            Posted: {data.start}
+            Posted: {data.attributes.date}
           </p>
-          <Link href={`/jobs/${data.title}`}>
+          <Link href={`/jobs/${data.attributes.title}`}>
             <button className="float-right px-6 py-2.5 bg-blue-600 text-white font-bold  text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
               Read More / Apply
             </button>
