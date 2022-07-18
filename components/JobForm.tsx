@@ -116,7 +116,7 @@ const JobForm = (): JSX.Element => {
 
           <p className="mt-7"> Enter job description.</p>
 
-          <RichEditor value={description} onChange={setDescription} />
+          <RichEditor setDescription={setDescription} />
           <div className="flex mt-20 pt-20 md:pt-0 ">
             <div className="mb-3 w-80">
               <p className="mb-3"> Select your ad type</p>
@@ -126,7 +126,6 @@ const JobForm = (): JSX.Element => {
                 onChange={(e) => setType(e.target.value)}
                 value={type}
               >
-                {/*     <option selected>Select Ad Type</option> */}
                 <option value="Standard">Standard (14,99 E)</option>
                 <option value="Premium">Premium (24,99 E)</option>
               </select>

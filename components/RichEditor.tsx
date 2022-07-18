@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { Dispatch, SetStateAction } from "react";
 import "react-quill/dist/quill.snow.css";
 
 const QuillNoSSRWrapper = dynamic(import("react-quill"), {
@@ -41,14 +42,14 @@ const formats = [
 ];
 
 interface Props {
-  value: string;
-  onChange?: any;
+  setDescription?: Dispatch<SetStateAction<string>> | any;
 }
 
-const RichEditor = ({ value, onChange }: Props): JSX.Element => {
-  const handleChange = (value: any) => {
-    onChange(value);
+const RichEditor = ({ setDescription }: Props): JSX.Element => {
+  const handleChange = (value: string) => {
+    setDescription(value);
   };
+
   return (
     <>
       <QuillNoSSRWrapper
@@ -56,7 +57,6 @@ const RichEditor = ({ value, onChange }: Props): JSX.Element => {
         formats={formats}
         theme="snow"
         className="mt-2  h-96"
-        value={value}
         onChange={handleChange}
         placeholder="mininum 100 characteres"
       />
