@@ -40,14 +40,25 @@ const formats = [
   "link",
 ];
 
-const RichEditor = (): JSX.Element => {
+interface Props {
+  value: string;
+  onChange?: any;
+}
+
+const RichEditor = ({ value, onChange }: Props): JSX.Element => {
+  const handleChange = (value: any) => {
+    onChange(value);
+  };
   return (
     <>
       <QuillNoSSRWrapper
         modules={modules}
         formats={formats}
         theme="snow"
-        className="mt-10  h-96"
+        className="mt-2  h-96"
+        value={value}
+        onChange={handleChange}
+        placeholder="mininum 100 characteres"
       />
     </>
   );
