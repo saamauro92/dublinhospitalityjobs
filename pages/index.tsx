@@ -47,13 +47,13 @@ const Home = ({ jobs }: Props) => {
         </form>
       </div>
 
-      <div className="lg:mt-1 lg:mx-20 xl:w-6/12 lg:pt-10 lg:px-2 mb-5">
+      <div className="lg:mt-1 lg:mx-auto text-center xl:w-6/12 lg:pt-10 lg:px-2 mb-5">
         <h1 className=" text-blue-600 font-bold mx-4 text-xl   ">
           Latest offers ({foundJobs.length} found)
         </h1>
       </div>
 
-      <div className="lg:mt-1 lg:mx-20 xl:w-6/12 lg:px-2  h-auto mb-20">
+      <div className="lg:mt-1 lg:mx-auto xl:w-6/12 lg:px-2  h-auto mb-20 ">
         {foundJobs && foundJobs.length > 0 ? (
           foundJobs
             .slice(0, 20)

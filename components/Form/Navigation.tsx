@@ -17,7 +17,7 @@ const Navigation = ({
 }: Props): JSX.Element => {
   return (
     <>
-      <div className=" mt-10 flex justify-center gap-10 ">
+      <div className=" flex justify-center gap-10 ">
         {step > 0 && (
           <div className="flex justify-center">
             <button
@@ -81,11 +81,11 @@ const Navigation = ({
           </>
         )}
       </div>
-      <p className="pt-10">
+      {/*       <p className="pt-10">
         {" "}
         * Once sent your ad will be reviewed and after payment is completed will
         take up to 24 hours to show up in the listing.
-      </p>
+      </p> */}
     </>
   );
 };
