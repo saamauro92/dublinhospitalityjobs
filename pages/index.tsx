@@ -57,6 +57,7 @@ const Home = ({ jobs }: Props) => {
         {foundJobs && foundJobs.length > 0 ? (
           foundJobs
             .slice(0, 20)
+            .reverse()
             .map((job, index) => <Job data={job} key={index} index={index} />)
         ) : (
           <div className="mx-4 my-4 mb-14 pb-12 border-b-2">
