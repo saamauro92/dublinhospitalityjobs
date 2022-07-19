@@ -91,7 +91,7 @@ const JobForm = (): JSX.Element => {
             <p className="text-xl font-light leading-relaxed  mb-4 text-gray-800">
               - Or you can email us your job to jobs@dublinhospitalityjobs.com.
             </p>
-            <div className="border p-20 flex flex-col justify-center">
+            <div className="lg:border p-2 lg:p-20 flex flex-col justify-center min-w-max">
               {fieldGroups[step]}
               <Navigation
                 step={step}
