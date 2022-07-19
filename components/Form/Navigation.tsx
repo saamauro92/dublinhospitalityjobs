@@ -1,0 +1,94 @@
+import { Dispatch, SetStateAction } from "react";
+
+interface Props {
+  step?: Dispatch<SetStateAction<string>> | any;
+  setStep?: Dispatch<SetStateAction<string>> | any;
+  fieldGroups?: Element[] | any;
+  handleSubmit?: () => void;
+  loading?: boolean;
+}
+
+const Navigation = ({
+  step,
+  setStep,
+  fieldGroups,
+  handleSubmit,
+  loading,
+}: Props): JSX.Element => {
+  return (
+    <>
+      <div className=" mt-10 flex justify-center gap-4 ">
+        {step > 0 && (
+          <div className="flex justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+              className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            >
+              Back
+            </button>
+          </div>
+        )}
+        {step < fieldGroups.length - 1 && (
+          <div className="flex  justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+              className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            >
+              Next
+            </button>
+          </div>
+        )}
+      </div>
+      {step === fieldGroups.length - 1 && (
+        <div className=" mt-10 flex flex-col justify-center">
+          <button
+            type="button"
+            className={
+              "mb-2 w-60  inline-block px-6 py-2.5 bg-blue-600 text-white font-bold text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            }
+            onClick={handleSubmit}
+          >
+            {loading ? (
+              <>
+                <div
+                  className="spinner-grow inline-block w-2 h-3 bg-current rounded-full opacity-0 text-gray-300"
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+                <div
+                  className="spinner-grow inline-block w-2 h-3 bg-current rounded-full opacity-0 text-gray-300"
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+                <div
+                  className="spinner-grow inline-block w-2 h-3 bg-current rounded-full opacity-0 text-gray-300"
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </>
+            ) : (
+              "Submit"
+            )}
+          </button>
+
+          <p>
+            {" "}
+            * Once sent your ad will be reviewed and after payment is completed
+            will take up to 24 hours to show up in the listing.
+          </p>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Navigation;

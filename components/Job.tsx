@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { JobTypes } from "../types/types";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+
+import { Markup } from "interweave";
+import { useEffect, useState } from "react";
 
 type Props = {
   data: JobTypes;
@@ -8,6 +10,13 @@ type Props = {
 };
 
 const Job = ({ data, index }: Props): JSX.Element => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    /*  this sorts markup intervewave issue at rehydrate*/
+    setHasMounted(true);
+  }, []);
+
   return (
     <>
       <div
@@ -23,7 +32,7 @@ const Job = ({ data, index }: Props): JSX.Element => {
             {data.attributes.title}{" "}
           </h2>
         </Link>
-        <div className="flex space-x-2 items-en  items-baseline ">
+        <div className="flex space-x-2 items-en  items-baseline   ">
           <i className="fas fa-map-marker-alt"></i>
           <p className=" text-md my-2 capitalize ">
             {data.attributes.location}
@@ -34,9 +43,14 @@ const Job = ({ data, index }: Props): JSX.Element => {
 
           <p className=" text-md my-2 capitalize">{data.attributes.rate}</p>
         </div>
-
-        <ReactMarkdown>{data.attributes.description}</ReactMarkdown>
-
+        <div> </div>
+        {hasMounted && (
+          <Markup
+            noHtml={false}
+            className="overflow-hidden   max-h-24"
+            content={data.attributes.description}
+          />
+        )}
         <div>
           <p className=" text-md my-2 capitalize float-left">
             Posted: {data.attributes.date}
