@@ -8,7 +8,7 @@ interface Props {
 const SuccessField = ({ setJobsent }: Props): JSX.Element => {
   return (
     <>
-      <div className="lg:mt-1 lg:mx-20 xl:w-6/12 lg:px-2 h-screen ">
+      <div className="lg:mt-1 lg:mx-auto xl:w-6/12 lg:px-2 h-screen ">
         <div className="mx-4 flex flex-col justify-center py-5 mt-20 ">
           <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-blue-600">
             Thanks, your job has been succesfully sent.
