@@ -14,6 +14,7 @@ const JobForm = (): JSX.Element => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [type, setType] = useState("Standard");
+  const [promo, setPromo] = useState("");
   const [loading, setLoading] = useState(false);
   const [jobsent, setJobSent] = useState(false);
 
@@ -21,7 +22,13 @@ const JobForm = (): JSX.Element => {
   const [step, setStep] = useState(0);
 
   const fieldGroups = [
-    <JobTypeFields type={type} setType={setType} key={1} />,
+    <JobTypeFields
+      type={type}
+      setType={setType}
+      promo={promo}
+      setPromo={setPromo}
+      key={1}
+    />,
     <ContactFields
       name={name}
       email={email}
@@ -51,6 +58,7 @@ const JobForm = (): JSX.Element => {
           title: title,
           description: description,
           type: type,
+          promo: promo,
           location: "",
           company: "",
           email: email,
@@ -64,6 +72,7 @@ const JobForm = (): JSX.Element => {
         setDescription("");
         setName("");
         setType("Standar");
+        setPromo("");
         setEmail("");
         setTitle("");
       } else {
