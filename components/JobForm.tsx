@@ -101,8 +101,39 @@ const JobForm = (): JSX.Element => {
               - Or you can email us your job to jobs@dublinhospitalityjobs.com.
             </p>
 
-            <div className="lg:border  pt-20 lg:min-h-[500px] flex flex-col justify-between">
-              <div className=" lg:px-10 px-0 flex-1  place-content-center ">
+            <div className="lg:border  pt-0 lg:min-h-[500px] flex flex-col justify-between">
+              {step === 0 ? (
+                <div className="w-full bg-gray-200 h-1">
+                  <div
+                    className="bg-blue-600 h-1"
+                    style={{ width: "25%" }}
+                  ></div>
+                </div>
+              ) : null || step === 1 ? (
+                <div className="w-full bg-gray-200 h-1">
+                  <div
+                    className="bg-blue-600 h-1"
+                    style={{ width: "50%" }}
+                  ></div>
+                </div>
+              ) : null}
+              {step === 2 ? (
+                <div className="w-full bg-gray-200 h-1">
+                  <div
+                    className="bg-blue-600 h-1"
+                    style={{ width: "75%" }}
+                  ></div>
+                </div>
+              ) : null || step === 3 ? (
+                <div className="w-full bg-gray-200 h-1">
+                  <div
+                    className="bg-blue-600 h-1"
+                    style={{ width: "100%" }}
+                  ></div>
+                </div>
+              ) : null}
+
+              <div className=" lg:px-10 pt-20 px-0 flex-1  place-content-center ">
                 {fieldGroups[step]}
               </div>
               <div className=" pt-10 mb-4 m-0 ">
