@@ -11,7 +11,7 @@ const SearchInput = ({ name, handleSearch, setName }: Props): JSX.Element => {
     <>
       <div className="text-center  text-blue-600 font-bold  text-2xl  pb-2 ">
         <input
-          className="px-2 shadow-md rounded text-gray-600  py-1 w-[16] md:w-[28rem] lg:w-[33rem] mt-8 font-thin focus:outline-0"
+          className="px-2 shadow-md rounded text-gray-600  py-1 w-[16] md:w-[28rem] lg:w-[33rem] mt-8 font-thin focus:outline-none "
           placeholder="Search"
           type="search"
           value={name}

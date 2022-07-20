@@ -3,12 +3,18 @@ import Link from "next/link";
 const NavBar = (): JSX.Element => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg   py-2  z-20 w-full relative flex  justify-between px-20 ">
-        <div>
-          <h2 className="font-semibold text-slate-300 text-4xl ">Dublin</h2>
-          <h4 className="font-semibold text-white text-xl mb-6">
-            Hospitality Jobs
-          </h4>
+      <nav className="navbar navbar-expand-lg  py-2  z-20 w-full relative flex  justify-between px-5 md:px-15 lg:px-20 ">
+        <div className="flex flex-col align-middle items-baseline ">
+          <Link href={"/"}>
+            <h2 className="font-semibold text-slate-300 lg:text-4xl cursor-pointer text-base md:text-2xl">
+              Dublin
+            </h2>
+          </Link>
+          <Link href={"/"}>
+            <h4 className="font-semibold text-white text-sm md:text-base lg:text-xl mb-6 cursor-pointer">
+              Hospitality Jobs
+            </h4>
+          </Link>
         </div>
         <div className=" lg:mt-1 lg:mx-20  lg:px-2  h-auto ">
           <Link href="/post">
