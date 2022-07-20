@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
+import Header from "../components/App/Header";
 
 import Layout from "../components/App/Layout";
 import Job from "../components/Job";
+import SearchInput from "../components/SearchInput/SearchInput";
 import { JobTypes } from "../types/types";
+import { fetchAPI } from "../utils";
 
 interface Props {
   jobs: JobTypes[];
@@ -32,20 +35,13 @@ const Home = ({ jobs }: Props) => {
   };
   return (
     <Layout>
-      <div className="text-center  text-blue-600 font-bold  text-2xl pt-8 pb-2 px-6">
-        <form onSubmit={handleSearch}>
-          <input
-            className="px-2 shadow-md rounded text-gray-600 py-1 w-80 mt-8 font-thin focus:outline-0"
-            placeholder="Search"
-            type="search"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <button type="submit" className="bg-blue-600 p-1  text-white rounded">
-            <i className="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
+      <Header headerBig={true}>
+        <SearchInput
+          handleSearch={handleSearch}
+          name={name}
+          setName={setName}
+        />
+      </Header>
 
       <div className="lg:mt-1 lg:mx-auto text-center xl:w-6/12 lg:pt-10 lg:px-2 mb-5">
         <h1 className=" text-blue-600 font-bold mx-4 text-xl   ">
@@ -71,16 +67,13 @@ const Home = ({ jobs }: Props) => {
 
 export default Home;
 
-export async function getStaticProps() {
-  const res = await fetch(
-    "https://dublinhospitalityjobs-backend.herokuapp.com/api/jobs"
-  );
-  const jobsdata = await res.json();
-  const jobs = jobsdata.data;
+export const getStaticProps: GetStaticProps = async () => {
+  const jobs = await fetchAPI("/jobs", { populate: "*" });
 
   return {
     props: {
-      jobs,
+      jobs: jobs?.data,
     },
+    revalidate: 1,
   };
-}
+};
