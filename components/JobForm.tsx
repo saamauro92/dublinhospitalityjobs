@@ -3,6 +3,7 @@ import { useState } from "react";
 import ContactFields from "./Form/ContactFields";
 import DescriptionFields from "./Form/DescriptionFields";
 import JobTypeFields from "./Form/JobTypeFields";
+import LocationFields from "./Form/LocationFields";
 import Navigation from "./Form/Navigation";
 import SuccessField from "./Form/SuccessField";
 import TitleField from "./Form/TitleField";
@@ -11,6 +12,7 @@ import RichEditor from "./RichEditor";
 const JobForm = (): JSX.Element => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [location, setLocation] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [type, setType] = useState("Standard");
@@ -37,6 +39,7 @@ const JobForm = (): JSX.Element => {
       setPromo={setPromo}
       key={1}
     />,
+    <LocationFields location={location} setLocation={setLocation} key={1} />,
 
     <TitleField
       title={title}
@@ -49,10 +52,11 @@ const JobForm = (): JSX.Element => {
   ];
 
   const handleSubmit = () => {
-    if (!name || !email) return alert("Please complete all the fields");
+    if (!name || !email || !location)
+      return alert("Please complete all the fields");
 
-    if (name.length < 3 || email.length < 3)
-      return alert(" Minimum 3 characters in name/email fields");
+    if (name.length < 3 || email.length < 3 || location.length < 3)
+      return alert(" Minimum 3 characters in name/email/location fields");
     if (description.length < 100)
       return alert("Please at least 100 characteres ");
     setLoading(true);
@@ -69,7 +73,7 @@ const JobForm = (): JSX.Element => {
           positionTime: positionTime,
           promo: promo,
           rate: positionTime,
-          location: "",
+          location: location,
           company: "",
           email: email,
           date: Date.now(),
@@ -84,6 +88,7 @@ const JobForm = (): JSX.Element => {
         setType("Standar");
         setPositionTime("Full Time");
         setPromo("");
+        setLocation("");
         setEmail("");
         setTitle("");
       } else {
@@ -117,14 +122,14 @@ const JobForm = (): JSX.Element => {
                 <div className="w-full bg-gray-200 h-1">
                   <div
                     className="bg-blue-600 h-1"
-                    style={{ width: "25%" }}
+                    style={{ width: "20%" }}
                   ></div>
                 </div>
               ) : null || step === 1 ? (
                 <div className="w-full bg-gray-200 h-1">
                   <div
                     className="bg-blue-600 h-1"
-                    style={{ width: "50%" }}
+                    style={{ width: "40%" }}
                   ></div>
                 </div>
               ) : null}
@@ -132,10 +137,18 @@ const JobForm = (): JSX.Element => {
                 <div className="w-full bg-gray-200 h-1">
                   <div
                     className="bg-blue-600 h-1"
-                    style={{ width: "75%" }}
+                    style={{ width: "60%" }}
                   ></div>
                 </div>
               ) : null || step === 3 ? (
+                <div className="w-full bg-gray-200 h-1">
+                  <div
+                    className="bg-blue-600 h-1"
+                    style={{ width: "80%" }}
+                  ></div>
+                </div>
+              ) : null}
+              {step === 4 ? (
                 <div className="w-full bg-gray-200 h-1">
                   <div
                     className="bg-blue-600 h-1"
