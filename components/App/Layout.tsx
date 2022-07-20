@@ -10,8 +10,6 @@ type Props = {
 const Layout = ({ children }: Props): JSX.Element => {
   return (
     <div className=" ">
-      <NavBar />
-
       {children}
       <Footer />
     </div>

@@ -9,9 +9,9 @@ interface Props {
 const SearchInput = ({ name, handleSearch, setName }: Props): JSX.Element => {
   return (
     <>
-      <div className="text-center  text-blue-600 font-bold  text-2xl pt-8 pb-2 px-6">
+      <div className="text-center  text-blue-600 font-bold  text-2xl  pb-2 ">
         <input
-          className="px-2 shadow-md rounded text-gray-600 py-1 w-80 mt-8 font-thin focus:outline-0"
+          className="px-2 shadow-md rounded text-gray-600  py-1 w-[16] md:w-[28rem] lg:w-[33rem] mt-8 font-thin focus:outline-0"
           placeholder="Search"
           type="search"
           value={name}
