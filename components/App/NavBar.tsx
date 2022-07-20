@@ -16,7 +16,7 @@ const NavBar = (): JSX.Element => {
             </h4>
           </Link>
         </div>
-        <div className=" lg:mt-1 lg:mx-20  lg:px-2  h-auto ">
+        <div className=" lg:mt-1     h-auto ">
           <Link href="/post">
             <button
               type="button"

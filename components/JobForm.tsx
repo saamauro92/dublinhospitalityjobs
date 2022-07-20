@@ -113,64 +113,65 @@ const JobForm = (): JSX.Element => {
             <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-blue-600">
               Post A Job
             </h5>
-            <p className="text-xl font-light leading-relaxed mt-6 mb-4 text-gray-800">
+            <p className="text-md font-light leading-relaxed mt-6 mb-4 text-gray-800">
               - You can submit your job description using the form below.
             </p>
-            <p className="text-xl font-light leading-relaxed  mb-4 text-gray-800">
+            <p className="text-md font-light leading-relaxed  mb-4 text-gray-800">
               - Or you can email us your job to jobs@dublinhospitalityjobs.com.
             </p>
+            <div className="md:border md:shadow-xl lg:border lg:shadow-xl ">
+              <div className="  pt-0 lg:min-h-[520px] flex flex-col justify-between">
+                {step === 0 ? (
+                  <div className="w-full bg-gray-200 h-1">
+                    <div
+                      className="bg-blue-600 h-1"
+                      style={{ width: "20%" }}
+                    ></div>
+                  </div>
+                ) : null || step === 1 ? (
+                  <div className="w-full bg-gray-200 h-1">
+                    <div
+                      className="bg-blue-600 h-1"
+                      style={{ width: "40%" }}
+                    ></div>
+                  </div>
+                ) : null}
+                {step === 2 ? (
+                  <div className="w-full bg-gray-200 h-1">
+                    <div
+                      className="bg-blue-600 h-1"
+                      style={{ width: "60%" }}
+                    ></div>
+                  </div>
+                ) : null || step === 3 ? (
+                  <div className="w-full bg-gray-200 h-1">
+                    <div
+                      className="bg-blue-600 h-1"
+                      style={{ width: "80%" }}
+                    ></div>
+                  </div>
+                ) : null}
+                {step === 4 ? (
+                  <div className="w-full bg-gray-200 h-1">
+                    <div
+                      className="bg-blue-600 h-1"
+                      style={{ width: "100%" }}
+                    ></div>
+                  </div>
+                ) : null}
 
-            <div className="lg:border  pt-0 lg:min-h-[500px] flex flex-col justify-between">
-              {step === 0 ? (
-                <div className="w-full bg-gray-200 h-1">
-                  <div
-                    className="bg-blue-600 h-1"
-                    style={{ width: "20%" }}
-                  ></div>
+                <div className=" lg:px-10 pt-20 px-0 flex-1  place-content-center md:px-4 ">
+                  {fieldGroups[step]}
                 </div>
-              ) : null || step === 1 ? (
-                <div className="w-full bg-gray-200 h-1">
-                  <div
-                    className="bg-blue-600 h-1"
-                    style={{ width: "40%" }}
-                  ></div>
+                <div className=" pt-10 mb-4 m-0 ">
+                  <Navigation
+                    step={step}
+                    setStep={setStep}
+                    fieldGroups={fieldGroups}
+                    handleSubmit={handleSubmit}
+                    loading={loading}
+                  />
                 </div>
-              ) : null}
-              {step === 2 ? (
-                <div className="w-full bg-gray-200 h-1">
-                  <div
-                    className="bg-blue-600 h-1"
-                    style={{ width: "60%" }}
-                  ></div>
-                </div>
-              ) : null || step === 3 ? (
-                <div className="w-full bg-gray-200 h-1">
-                  <div
-                    className="bg-blue-600 h-1"
-                    style={{ width: "80%" }}
-                  ></div>
-                </div>
-              ) : null}
-              {step === 4 ? (
-                <div className="w-full bg-gray-200 h-1">
-                  <div
-                    className="bg-blue-600 h-1"
-                    style={{ width: "100%" }}
-                  ></div>
-                </div>
-              ) : null}
-
-              <div className=" lg:px-10 pt-20 px-0 flex-1  place-content-center ">
-                {fieldGroups[step]}
-              </div>
-              <div className=" pt-10 mb-4 m-0 ">
-                <Navigation
-                  step={step}
-                  setStep={setStep}
-                  fieldGroups={fieldGroups}
-                  handleSubmit={handleSubmit}
-                  loading={loading}
-                />
               </div>
             </div>
           </div>
