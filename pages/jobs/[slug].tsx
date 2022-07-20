@@ -1,5 +1,7 @@
+import { Markup } from "interweave";
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
+import { useEffect, useState } from "react";
 import Header from "../../components/App/Header";
 import Layout from "../../components/App/Layout";
 import { JobTypes } from "../../types/types";
@@ -15,14 +17,29 @@ type Props = {
 };
 
 const Post = ({ job }: Props): JSX.Element => {
-  console.log("JOB", job);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    /*  this sorts markup intervewave issue at rehydrate*/
+    setHasMounted(true);
+  }, []);
+
   return (
     <Layout>
       <Header headerBig={false} />
-      <h1>hla</h1>
-      <h1 className=" text-md text-blue-500">{job.attributes.title}</h1>
+      <div className="lg:mt-1 lg:mx-auto xl:w-6/12 lg:px-2  h-screen mb-20 ">
+        <div className="mx-4 flex flex-col  justify-center py-5 ">
+          <h1 className="font-semibold text-xl my-2 capitalize cursor-pointer text-blue-600">
+            {job.attributes.title}
+          </h1>
 
-      <p>{job.attributes.description}</p>
+          <Markup
+            noHtml={false}
+            className="overflow-hidden   max-h-24"
+            content={job.attributes.description}
+          />
+        </div>
+      </div>
     </Layout>
   );
 };
