@@ -27,10 +27,10 @@ const Job = ({ data, index }: Props): JSX.Element => {
         }
       >
         <Link href={`/jobs/${data.attributes.title}`}>
-          <h2 className="font-semibold text-md my-2 capitalize cursor-pointer">
+          <h1 className="font-semibold text-xl my-2 capitalize cursor-pointer text-blue-600">
             {" "}
             {data.attributes.title}{" "}
-          </h2>
+          </h1>
         </Link>
         <div className="flex space-x-2 items-en  items-baseline   ">
           <i className="fas fa-map-marker-alt"></i>
