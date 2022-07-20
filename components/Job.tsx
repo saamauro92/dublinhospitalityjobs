@@ -39,8 +39,7 @@ const Job = ({ data, index }: Props): JSX.Element => {
           </p>
         </div>
         <div className="flex space-x-2 items-en  items-baseline ">
-          <i className="fas fa-euro-sign"></i>
-
+          <i className="far fa-clock"></i>
           <p className=" text-md my-2 capitalize">{data.attributes.rate}</p>
         </div>
         <div> </div>

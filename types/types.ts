@@ -6,6 +6,7 @@ export interface JobTypes {
     title: string,
     description: string,
     type: string,
+    rate:string,
     location: string,
     company: string,
     email: string,
