@@ -61,7 +61,7 @@ const JobForm = (): JSX.Element => {
       return alert(" Minimum 2 characters in location field");
 
     if (description.length < 100)
-      return alert("Please at least 100 characteres ");
+      return alert("Please write at least 100 characteres ");
     setLoading(true);
     fetch("https://dublinhospitalityjobs-backend.herokuapp.com/api/jobs", {
       method: "POST",

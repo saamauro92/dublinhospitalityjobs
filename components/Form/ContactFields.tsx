@@ -31,6 +31,9 @@ const ContactFields = ({
         placeholder=""
         value={name}
         onChange={(e) => setName(e.target.value)}
+        maxLength={42}
+        minLength={3}
+        required
       />
 
       <label
@@ -46,6 +49,9 @@ const ContactFields = ({
         placeholder=""
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        maxLength={42}
+        minLength={3}
+        required
       />
     </>
   );
