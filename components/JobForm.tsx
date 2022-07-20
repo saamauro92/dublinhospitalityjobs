@@ -55,8 +55,11 @@ const JobForm = (): JSX.Element => {
     if (!name || !email || !location)
       return alert("Please complete all the fields");
 
-    if (name.length < 3 || email.length < 3 || location.length < 3)
-      return alert(" Minimum 3 characters in name/email/location fields");
+    if (name.length < 3 || email.length < 3)
+      return alert(" Minimum 3 characters in name/email fields");
+    if (location.length < 2)
+      return alert(" Minimum 2 characters in location field");
+
     if (description.length < 100)
       return alert("Please at least 100 characteres ");
     setLoading(true);
