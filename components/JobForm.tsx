@@ -93,7 +93,7 @@ const JobForm = (): JSX.Element => {
             </p>
 
             <div className="lg:border  pt-20 lg:min-h-[500px] flex flex-col justify-between">
-              <div className=" px-10 flex-1  place-content-center ">
+              <div className=" lg:px-10 px-0 flex-1  place-content-center ">
                 {fieldGroups[step]}
               </div>
               <div className=" pt-10 mb-4 m-0 ">

@@ -56,7 +56,7 @@ const RichEditor = ({ setDescription }: Props): JSX.Element => {
         modules={modules}
         formats={formats}
         theme="snow"
-        className="mb-20 pb-10 lg:pb-0 lg:mb-10 h-60"
+        className="mb-20 pb-10 lg:pb-0 lg:mb-10 h-60 "
         onChange={handleChange}
         placeholder="mininum 100 characteres"
       />
