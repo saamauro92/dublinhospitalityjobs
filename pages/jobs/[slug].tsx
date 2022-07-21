@@ -4,8 +4,9 @@ import { ParsedUrlQuery } from "querystring";
 import { useEffect, useState } from "react";
 import Header from "../../components/App/Header";
 import Layout from "../../components/App/Layout";
+import SearchInput from "../../components/SearchInput/SearchInput";
 import { JobTypes } from "../../types/types";
-import { fetchAPI } from "../../utils";
+import { fetchAPI } from "../utils/utils";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
@@ -14,10 +15,13 @@ interface IParams extends ParsedUrlQuery {
 type Props = {
   [key: string]: object;
   job: JobTypes;
+  jobs: JobTypes[];
 };
 
-const Post = ({ job }: Props): JSX.Element => {
+const Post = ({ job, jobs }: Props): JSX.Element => {
   const [hasMounted, setHasMounted] = useState(false);
+  const [name, setName] = useState("");
+  const [foundJobs, setFoundJobs] = useState(jobs);
 
   useEffect(() => {
     /*  this sorts markup intervewave issue at rehydrate*/
@@ -26,18 +30,27 @@ const Post = ({ job }: Props): JSX.Element => {
 
   return (
     <Layout>
-      <Header headerBig={false} />
-      <div className="lg:mt-1 lg:mx-auto xl:w-6/12 lg:px-2  h-screen mb-20 ">
-        <div className="mx-4 flex flex-col  justify-center py-5 ">
-          <h1 className="font-semibold text-xl my-2 capitalize cursor-pointer text-blue-600">
-            {job.attributes.title}
-          </h1>
+      <Header headerBig={false}>
+        <SearchInput
+          jobs={jobs}
+          name={name}
+          setName={setName}
+          foundJobs={foundJobs}
+          setFoundJobs={setFoundJobs}
+        />
+      </Header>
+      <div className="md:mt-20 mt-10 lg:mt-20 lg:mx-auto xl:w-6/12 lg:px-2  h-screen mb-20 ">
+        <div className="mx-4 flex flex-col  justify-center py-5  border-b-2 ">
+          <h1>hla</h1>
+          <h1 className=" text-md text-blue-500">{job.attributes.title}</h1>
 
-          <Markup
-            noHtml={false}
-            className="overflow-hidden   max-h-24"
-            content={job.attributes.description}
-          />
+          {hasMounted && (
+            <Markup
+              noHtml={false}
+              className="overflow-hidden   max-h-24"
+              content={job.attributes.description}
+            />
+          )}
         </div>
       </div>
     </Layout>
@@ -59,6 +72,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
   return {
     props: {
       job: jobs.data[0],
+      jobs: jobs.data,
     },
     revalidate: 1,
   };
@@ -67,12 +81,13 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const jobs = await fetchAPI("/jobs", { field: ["slug"] });
 
+  const paths = jobs.data.map((job: JobTypes) => ({
+    params: {
+      slug: job.attributes.slug,
+    },
+  }));
   return {
-    paths: jobs.data.map((jobs: JobTypes) => ({
-      params: {
-        slug: jobs.attributes.slug,
-      },
-    })),
+    paths,
     fallback: false,
   };
 };

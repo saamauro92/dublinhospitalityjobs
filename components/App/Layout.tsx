@@ -1,13 +1,15 @@
 import React, { ReactNode } from "react";
+import { JobTypes } from "../../types/types";
 import Footer from "./Footer";
 import Header from "./Header";
 import NavBar from "./NavBar";
 
 type Props = {
   children: ReactNode;
+  jobs?: JobTypes;
 };
 
-const Layout = ({ children }: Props): JSX.Element => {
+const Layout = ({ children, jobs }: Props): JSX.Element => {
   return (
     <div className=" ">
       {children}

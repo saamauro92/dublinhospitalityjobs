@@ -1,15 +1,18 @@
 import Link from "next/link";
+import { JobTypes } from "../../types/types";
+import SearchInput from "../SearchInput/SearchInput";
 
 interface Props {
   headerBig?: boolean;
+  jobs?: JobTypes;
 }
 
-const NavBar = ({ headerBig }: Props): JSX.Element => {
+const NavBar = ({ headerBig, jobs }: Props): JSX.Element => {
   return (
     <>
       <nav
         className={
-          "navbar navbar-expand-lg  py-4  z-20 w-full relative flex  justify-between px-5 md:px-15 lg:px-20 "
+          "navbar navbar-expand-lg  py-4  z-20 w-full relative flex  justify-between px-5 md:px-15 lg:px-20  "
         }
       >
         <div className="flex flex-col align-middle items-baseline ">
@@ -36,6 +39,7 @@ const NavBar = ({ headerBig }: Props): JSX.Element => {
             </h4>
           </Link>
         </div>
+
         <div className=" lg:mt-1 h-auto ">
           <Link href="/post">
             <button

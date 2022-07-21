@@ -25,8 +25,6 @@ const Header = ({ children, headerBig }: Props): JSX.Element => {
               ? "url('https://res.cloudinary.com/dtycp96d8/image/upload/v1658331164/pexels-luciann-photography-3566191_1_qhokvw.jpg')"
               : ""
           }`,
-
-          /*        height: `${headerBig ? "500px" : "100px"}`, */
         }}
       >
         <NavBar headerBig={headerBig} />
@@ -37,7 +35,7 @@ const Header = ({ children, headerBig }: Props): JSX.Element => {
           }}
         >
           <div className="flex justify-center items-center h-full">
-            <div className="text-white px-5 lg:px-0 md:px-0 text-left">
+            <div className="text-white px-5 lg:px-0 md:px-0 text-left  z-50">
               {headerBig ? (
                 <h4 className="font-semibold text-base w-[18rem] sm:text-xl sm:w-[24rem] md:text-2xl md:w-[30rem] lg:text-2xl w-70 lg:w-[30rem] ">
                   {" "}
