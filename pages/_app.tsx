@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
 import Layout from "../components/App/Layout";
-import { fetchAPI } from "./utils/utils";
+import { fetchAPI } from "../utils/utils";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

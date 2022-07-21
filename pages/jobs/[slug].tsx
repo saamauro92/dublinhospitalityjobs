@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Header from "../../components/App/Header";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import { JobTypes } from "../../types/types";
-import { fetchAPI } from "../utils/utils";
+import { fetchAPI } from "../../utils/utils";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
