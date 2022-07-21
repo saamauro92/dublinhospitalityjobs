@@ -48,6 +48,7 @@ const AnySearch = ({ jobs }: Props) => {
           setName={setName}
           foundJobs={foundJobs}
           setFoundJobs={setFoundJobs}
+          responsive={true}
         />
       </Header>
 

@@ -9,6 +9,7 @@ interface Props {
   name: string;
   setName: Dispatch<SetStateAction<string>> | any;
   setMakeShallowPage?: Dispatch<SetStateAction<string>> | any;
+  responsive?: boolean;
 }
 
 const SearchInput = ({
@@ -17,6 +18,7 @@ const SearchInput = ({
   setName,
   foundJobs,
   setFoundJobs,
+  responsive,
 }: Props): JSX.Element => {
   const router = useRouter();
 
@@ -54,15 +56,21 @@ const SearchInput = ({
 
   return (
     <>
-      <div className="text-center  text-blue-600 font-bold  text-2xl  pb-2 ">
+      <div
+        className={
+          responsive
+            ? "text-center  text-blue-600 font-bold  text-base md:text-2xl pb-2 hidden sm:inline-block"
+            : "text-center  text-blue-600 font-bold  md:text-2xl  sm:hidden "
+        }
+      >
         <input
           className={
             router.pathname.includes("/jobs") ||
             router.pathname.includes("/post")
-              ? "px-2 shadow-sm  rounded-tl-md rounded-bl-md  bg-zinc-100  pl-5 text-gray-600  py-2 w-[16] md:w-[28rem] lg:w-[33rem] mt-8 font-thin focus:outline-none "
-              : "px-2 shadow-md  rounded-tl-md rounded-bl-md  pl-5 text-gray-600  py-2 w-[16] md:w-[28rem] lg:w-[33rem] mt-8 font-thin focus:outline-none "
+              ? "px-2 shadow-sm  rounded-tl-md rounded-bl-md  bg-zinc-100  pl-5 text-gray-600  py-2 my-5   w-[15rem] sm:w-[15rem]  md:w-[24rem] lg:w-[30rem] mt-8 font-thin focus:outline-none "
+              : "px-2 shadow-md  rounded-tl-md rounded-bl-md  pl-5 text-gray-600  py-2 w-[14rem] md:w-[28rem] lg:w-[33rem] mt-8 font-thin focus:outline-none "
           }
-          placeholder="Search"
+          placeholder="Search job"
           type="search"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -74,7 +82,7 @@ const SearchInput = ({
           className={
             router.pathname.includes("/jobs") ||
             router.pathname.includes("/post")
-              ? "bg-zinc-100 p-2  text-gray-500   border-slate-300 shadow-sm rounded-tr-md  rounded-br-md pr-5 "
+              ? "bg-zinc-100 p-2  text-gray-500  sm:inline-block  border-slate-300 shadow-sm rounded-tr-md  rounded-br-md pr-5 "
               : "bg-white p-2  text-gray-500 rounded-tr-md  rounded-br-md  pr-5 "
           }
         >

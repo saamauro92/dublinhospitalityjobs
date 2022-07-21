@@ -36,9 +36,18 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
           setName={setName}
           foundJobs={foundJobs}
           setFoundJobs={setFoundJobs}
+          responsive={true}
         />
       </Header>
-      <div className="md:mt-20 mt-10 lg:mt-20 lg:mx-auto xl:w-6/12 lg:px-2  h-screen mb-20 ">
+      <SearchInput
+        jobs={jobs}
+        name={name}
+        setName={setName}
+        foundJobs={foundJobs}
+        setFoundJobs={setFoundJobs}
+        responsive={false}
+      />
+      <div className="md:mt-20 sm:mt-20 lg:mx-auto xl:w-6/12 lg:px-2  h-screen mb-20 ">
         <div className="mx-4 flex flex-col  justify-center py-5  border-b-2 ">
           <h1>hla</h1>
           <h1 className=" text-md text-blue-500">{job.attributes.title}</h1>

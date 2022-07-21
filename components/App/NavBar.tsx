@@ -12,7 +12,7 @@ const NavBar = ({ headerBig, jobs }: Props): JSX.Element => {
     <>
       <nav
         className={
-          "navbar navbar-expand-lg  py-4  z-20 w-full relative flex  justify-between px-5 md:px-15 lg:px-20  "
+          "navbar navbar-expand-lg  py-4  z-20 w-full relative flex  justify-between px-5 md:px-15 lg:px-20 "
         }
       >
         <div className="flex flex-col align-middle items-baseline ">

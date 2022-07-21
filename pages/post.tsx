@@ -23,8 +23,18 @@ const Post = ({ jobs }: Props) => {
           setName={setName}
           foundJobs={foundJobs}
           setFoundJobs={setFoundJobs}
+          responsive={true}
         />
       </Header>
+
+      <SearchInput
+        jobs={jobs}
+        name={name}
+        setName={setName}
+        foundJobs={foundJobs}
+        setFoundJobs={setFoundJobs}
+        responsive={false}
+      />
 
       <JobForm />
     </>
