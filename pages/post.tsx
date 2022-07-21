@@ -2,7 +2,6 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 import Header from "../components/App/Header";
-import Layout from "../components/App/Layout";
 import JobForm from "../components/JobForm";
 import SearchInput from "../components/SearchInput/SearchInput";
 import { JobTypes } from "../types/types";
@@ -16,7 +15,7 @@ const Post = ({ jobs }: Props) => {
   const [foundJobs, setFoundJobs] = useState(jobs);
 
   return (
-    <Layout>
+    <>
       <Header headerBig={false}>
         <SearchInput
           jobs={jobs}
@@ -28,7 +27,7 @@ const Post = ({ jobs }: Props) => {
       </Header>
 
       <JobForm />
-    </Layout>
+    </>
   );
 };
 

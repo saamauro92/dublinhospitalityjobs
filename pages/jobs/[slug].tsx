@@ -3,7 +3,6 @@ import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { useEffect, useState } from "react";
 import Header from "../../components/App/Header";
-import Layout from "../../components/App/Layout";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import { JobTypes } from "../../types/types";
 import { fetchAPI } from "../utils/utils";
@@ -29,7 +28,7 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <Header headerBig={false}>
         <SearchInput
           jobs={jobs}
@@ -53,7 +52,7 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
           )}
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
