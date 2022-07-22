@@ -16,7 +16,7 @@ const Header = ({ children, headerBig }: Props): JSX.Element => {
       <div
         className={
           headerBig
-            ? "p-0 text-center relative overflow-hidden bg-no-repeat  bg-center bg-cover mb-5 md:mb-5 lg:mb-0  h-[500px]"
+            ? "p-0 text-center relative overflow-hidden bg-no-repeat  bg-center bg-cover mb-5 md:mb-5 lg:mb-0  h-[500px] "
             : "p-0 text-center relative overflow-hidden bg-no-repeat  bg-center bg-cover mb-5 md:mb-5 lg:mb-0 border-b md:h-[85px] lg:h-[100px] h-[72px]"
         }
         style={{
@@ -34,14 +34,15 @@ const Header = ({ children, headerBig }: Props): JSX.Element => {
             backgroundColor: `${headerBig ? "rgba(0, 0, 0, 0.6)" : ""}`,
           }}
         >
-          <div className="flex justify-center items-center h-full">
-            <div className="text-white px-5 lg:px-0 md:px-0 text-left  z-50">
+          <div className="flex  justify-center items-center h-full ">
+            <div className="text-white lg:px-0 md:px-0 text-left  z-50">
               {headerBig ? (
-                <h4 className="font-semibold text-base w-[18rem] sm:text-xl sm:w-[24rem] md:text-2xl md:w-[30rem] lg:text-2xl w-70 lg:w-[30rem] ">
+                <h4 className="font-semibold text-base  px-3 sm:px-0 w-[18rem] sm:text-xl sm:w-[24rem] md:text-2xl md:w-[30rem] lg:text-2xl w-70 lg:w-[30rem] ">
                   {" "}
                   {phrase}{" "}
                 </h4>
               ) : null}
+
               {children}
             </div>
           </div>
