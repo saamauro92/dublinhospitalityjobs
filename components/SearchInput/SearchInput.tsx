@@ -71,7 +71,6 @@ const SearchInput = ({
               : "px-2 shadow-md rounded-none   pl-5 text-gray-600  w-[16rem] sm:w-[24rem] md:w-[28rem] lg:w-[33rem] py-2   mt-8 font-thin focus:outline-none " /* rounded-tl-md  rounded-bl-md */
           }
           placeholder="Search job"
-          type="search"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
