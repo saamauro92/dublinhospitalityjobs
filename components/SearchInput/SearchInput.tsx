@@ -67,8 +67,8 @@ const SearchInput = ({
           className={
             router.pathname.includes("/jobs") ||
             router.pathname.includes("/post")
-              ? "px-2 shadow-sm    bg-zinc-100  pl-5 text-gray-600  py-2 my-5   w-[16rem] sm:w-[15rem]  md:w-[24rem] lg:w-[30rem] mt-8 font-thin focus:outline-none " /* rounded-tl-md */
-              : "px-2 shadow-md     pl-5 text-gray-600  w-[16rem] sm:w-[24rem] md:w-[28rem] lg:w-[33rem] py-2   mt-8 font-thin focus:outline-none " /* rounded-tl-md  rounded-bl-md */
+              ? "px-2 shadow-sm   rounded-none  bg-zinc-100  pl-5 text-gray-600  py-2 my-5   w-[16rem] sm:w-[15rem]  md:w-[24rem] lg:w-[30rem] mt-8 font-thin focus:outline-none " /* rounded-tl-md */
+              : "px-2 shadow-md rounded-none   pl-5 text-gray-600  w-[16rem] sm:w-[24rem] md:w-[28rem] lg:w-[33rem] py-2   mt-8 font-thin focus:outline-none " /* rounded-tl-md  rounded-bl-md */
           }
           placeholder="Search job"
           type="search"
