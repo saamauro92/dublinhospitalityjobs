@@ -13,6 +13,7 @@ export interface JobTypes {
     date: string,
     createdAt: string,
     updatedAt: string,
+    promo:string,
     slug: string,
     published: boolean;
   

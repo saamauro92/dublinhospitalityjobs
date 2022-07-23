@@ -7,11 +7,9 @@ import { GetStaticProps } from "next/types";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 

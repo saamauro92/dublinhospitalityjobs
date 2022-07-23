@@ -11,7 +11,7 @@ type Props = {
 
 const Layout = ({ children, jobs }: Props): JSX.Element => {
   return (
-    <div className="h-screen">
+    <div className="flex flex-col min-h-screen">
       {children}
       <Footer />
     </div>
