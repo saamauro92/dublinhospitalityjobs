@@ -47,9 +47,8 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
         setFoundJobs={setFoundJobs}
         responsive={false}
       />
-      <div className="md:mt-20 sm:mt-20 lg:mx-auto xl:w-6/12 lg:px-2  h-screen mb-20 ">
+      <div className="md:mt-20 sm:mt-20 lg:mx-auto xl:w-6/12 lg:px-2  h-screen ">
         <div className="mx-4 flex flex-col  justify-center py-5  border-b-2 ">
-          <h1>hla</h1>
           <h1 className=" text-md text-blue-500">{job.attributes.title}</h1>
 
           {hasMounted && (
