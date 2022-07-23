@@ -25,6 +25,7 @@ export async function fetchAPI(
   const mergedOptions = {
     headers: {
       "Content-Type": "application/json",
+      Authorization: `${process.env.NEXT_PUBLIC_STRAPI_API_KEY}`,
     },
     ...options,
   };
