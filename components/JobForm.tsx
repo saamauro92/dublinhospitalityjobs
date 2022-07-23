@@ -82,6 +82,7 @@ const JobForm = (): JSX.Element => {
           company: "",
           email: email,
           date: Date.now(),
+          publishedAt: null,
         },
       }),
     }).then((response) => {
@@ -97,9 +98,7 @@ const JobForm = (): JSX.Element => {
         setEmail("");
         setTitle("");
       } else {
-        alert(
-          "Error, pleaes make sure to complete fields with valid information (Email)"
-        );
+        alert("Error, please refresh the page and start again");
         setLoading(false);
       }
     });
