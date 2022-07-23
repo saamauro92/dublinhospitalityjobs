@@ -1,8 +1,10 @@
+import { GetStaticProps } from "next/types";
 import { useEffect, useState } from "react";
 import Header from "../components/App/Header";
 import JobsList from "../components/JobsList";
 import SearchInput from "../components/SearchInput/SearchInput";
 import { JobTypes } from "../types/types";
+import { fetchAPI } from "../utils/utils";
 
 interface Props {
   jobs: JobTypes[];
@@ -39,3 +41,13 @@ const Home = ({ jobs }: Props) => {
 };
 
 export default Home;
+export const getStaticProps: GetStaticProps = async () => {
+  const jobs = await fetchAPI("/jobs", { populate: "*" });
+
+  return {
+    props: {
+      jobs: jobs.data,
+    },
+    revalidate: 1,
+  };
+};
