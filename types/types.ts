@@ -14,6 +14,7 @@ export interface JobTypes {
     createdAt: string,
     updatedAt: string,
     slug: string,
+    published: boolean;
   
   }
 

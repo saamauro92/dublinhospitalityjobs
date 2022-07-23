@@ -82,7 +82,7 @@ const JobForm = (): JSX.Element => {
           company: "",
           email: email,
           date: Date.now(),
-          publishedAt: null,
+          /*        publishedAt: null, */
         },
       }),
     }).then((response) => {
