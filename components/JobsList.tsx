@@ -21,6 +21,7 @@ const JobsList = ({ foundJobs }: Props): JSX.Element => {
           foundJobs
             .slice(0, 20)
             .reverse()
+            .filter((job) => job.attributes.slug.length !== 0)
             .map((job, index) => <Job data={job} key={index} index={index} />)
         ) : (
           <div className="mx-4 my-4 mb-14 pb-12 border-b-2">
