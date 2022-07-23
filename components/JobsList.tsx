@@ -12,7 +12,12 @@ const JobsList = ({ foundJobs }: Props): JSX.Element => {
       <div className="lg:mt-1 lg:mx-auto text-center xl:w-6/12 lg:pt-10 lg:px-2 mb-5 ">
         {foundJobs && foundJobs.length > 0 && (
           <h1 className=" text-blue-600 font-bold mx-4 text-xl   ">
-            Latest offers ({foundJobs.length} found)
+            Latest offers (
+            {
+              foundJobs.filter((job) => job.attributes.published === true)
+                .length
+            }{" "}
+            found)
           </h1>
         )}
       </div>
