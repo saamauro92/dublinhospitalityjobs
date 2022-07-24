@@ -26,20 +26,20 @@ const Job = ({ data, index }: Props): JSX.Element => {
         }
       >
         <Link href={`/jobs/${data.attributes.slug}`}>
-          <h1 className="font-semibold text-md md:text-xl my-2 capitalize cursor-pointer text-blue-600">
+          <h1 className="font-semibold text-md md:text-xl my-2 capitalize leading-relaxed cursor-pointer text-blue-600">
             {" "}
             {data.attributes.title}{" "}
           </h1>
         </Link>
         <div className="flex space-x-2 items-en  items-baseline   ">
           <i className="fas fa-map-marker-alt"></i>
-          <p className="text-sm sm:text-md my-2 capitalize ">
+          <p className="text-sm sm:text-md my-2 capitalize leading-relaxed">
             {data.attributes.location}
           </p>
         </div>
         <div className="flex space-x-2 items-en  items-baseline ">
           <i className="far fa-clock"></i>
-          <p className=" text-sm sm:text-md my-2 capitalize">
+          <p className=" text-sm sm:text-md my-2 capitalize leading-relaxed">
             {data.attributes.rate}
           </p>
         </div>
@@ -50,12 +50,12 @@ const Job = ({ data, index }: Props): JSX.Element => {
 
         <p></p>
         <div className="flex justify-between">
-          <p className=" text-base sm:text-md  my-2 capitalize ">
+          <p className=" text-base sm:text-md  my-2 capitalize leading-relaxed">
             Posted:{" "}
             {<Moment format="DD/MM/YY HH:mm" date={data.attributes.date} />}
           </p>
           <Link href={`/jobs/${data.attributes.slug}`}>
-            <button className="    px-6 py-2.5 bg-blue-600 text-white font-bold text-sm sm:text-md  leading-tight  rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+            <button className="    px-6 py-2.5 bg-blue-600 text-white font-bold text-sm sm:text-md  leading-relaxed  rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
               Read More...
             </button>
           </Link>
