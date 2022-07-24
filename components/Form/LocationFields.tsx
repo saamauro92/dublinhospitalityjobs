@@ -15,7 +15,7 @@ const LocationFields = ({ location, setLocation }: Props): JSX.Element => {
         htmlFor="exampleFormControlInput1"
         className="form-label inline-block mb-2 text-gray-700 pt-10"
       >
-        Please write your jobs location.
+        Please write your job location.
       </label>
       <input
         type="text"
