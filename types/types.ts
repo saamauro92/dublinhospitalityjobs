@@ -16,6 +16,7 @@ export interface JobTypes {
     promo:string,
     slug: string,
     published: boolean;
+    keyword: string;
   
   }
 

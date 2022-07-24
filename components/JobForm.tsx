@@ -82,6 +82,7 @@ const JobForm = (): JSX.Element => {
           company: "",
           email: email,
           date: Date.now(),
+          keyword: title + " " + description,
           /*        publishedAt: null, */
         },
       }),
