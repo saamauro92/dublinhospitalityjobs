@@ -10,7 +10,7 @@ export interface JobTypes {
     location: string,
     company: string,
     email: string,
-    date: string,
+    date: number,
     createdAt: string,
     updatedAt: string,
     promo:string,
