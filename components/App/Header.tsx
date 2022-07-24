@@ -17,7 +17,7 @@ const Header = ({ children, headerBig }: Props): JSX.Element => {
         className={
           headerBig
             ? "p-0 text-center relative overflow-hidden bg-no-repeat  bg-center bg-cover mb-5 md:mb-5 lg:mb-0  h-[500px] "
-            : "p-0 text-center relative overflow-hidden bg-no-repeat  bg-center bg-cover mb-5 md:mb-5 lg:mb-0 border-b md:h-[85px] lg:h-[100px] h-[72px]"
+            : "p-0 text-center relative overflow-hidden bg-no-repeat  bg-center bg-cover mb-5 md:mb-5 lg:mb-0 border-b md:h-[85px] lg:h-[100px] h-[72px] "
         }
         style={{
           backgroundImage: `${

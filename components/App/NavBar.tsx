@@ -15,29 +15,25 @@ const NavBar = ({ headerBig, jobs }: Props): JSX.Element => {
           "navbar navbar-expand-lg  py-4  z-20 w-full relative flex  justify-between px-5 md:px-15 lg:px-20 "
         }
       >
-        <div className="flex flex-col align-middle items-baseline ">
-          <Link href={"/"}>
-            <h2
-              className={
-                headerBig
-                  ? "text-slate-300 font-semibold  lg:text-4xl cursor-pointer text-base md:text-2xl"
-                  : "text-slate-600 font-semibold  lg:text-4xl cursor-pointer text-base md:text-2xl"
-              }
-            >
-              Dublin
-            </h2>
-          </Link>
-          <Link href={"/"}>
-            <h4
-              className={
-                headerBig
-                  ? "font-semibold text-white text-sm md:text-base lg:text-xl mb-6 cursor-pointer"
-                  : "font-semibold text-slate-400 text-sm md:text-base lg:text-xl mb-6 cursor-pointer "
-              }
-            >
-              Hospitality Jobs
-            </h4>
-          </Link>
+        <div className="flex flex-col items-start ">
+          <h2
+            className={
+              headerBig
+                ? "text-slate-300 font-semibold  lg:text-4xl cursor-pointer text-base md:text-2xl"
+                : "text-slate-600 font-semibold  lg:text-4xl cursor-pointer text-base md:text-2xl"
+            }
+          >
+            <Link href={"/"}>Dublin</Link>
+          </h2>
+          <h4
+            className={
+              headerBig
+                ? "font-semibold text-white text-sm md:text-base lg:text-2xl mb-6 cursor-pointer"
+                : "font-semibold text-slate-400 text-sm md:text-base lg:text-xl mb-6 cursor-pointer "
+            }
+          >
+            <Link href={"/"}>Hospitality Jobs</Link>
+          </h4>
         </div>
 
         <div className=" lg:mt-1 h-auto ">
