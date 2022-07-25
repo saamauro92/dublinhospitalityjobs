@@ -43,7 +43,7 @@ const SearchInput = ({
     const keyword = name;
 
     if (keyword !== "") {
-      const results = jobs.filter((job) => {
+      const results = jobs?.filter((job) => {
         return job.attributes.keyword
           .toLowerCase()
           .includes(keyword.toLowerCase());
