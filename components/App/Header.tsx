@@ -22,7 +22,7 @@ const Header = ({ children, headerBig }: Props): JSX.Element => {
         style={{
           backgroundImage: `${
             headerBig
-              ? "url('https://res.cloudinary.com/dtycp96d8/image/upload/v1658331164/pexels-luciann-photography-3566191_1_qhokvw.jpg')"
+              ? "url('https://res.cloudinary.com/dtycp96d8/image/upload/v1658784105/pexels-luciann-photography-3566191-_1__wyozzc.webp')"
               : ""
           }`,
         }}
