@@ -46,7 +46,7 @@ const NavBar = ({ headerBig, jobs }: Props): JSX.Element => {
                   : "inline-block px-6 md:py-4 lg:py-6 py-3   bg-blue-600  text-white font-bold  text-xs leading-tight  rounded shadow-md  hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg transition duration-150 ease-in-out"
               }
             >
-              Post Job
+              Post a Job
             </button>
           </Link>
         </div>
