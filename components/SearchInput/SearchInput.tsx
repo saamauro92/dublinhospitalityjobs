@@ -3,7 +3,7 @@ import { JobTypes } from "../../types/types";
 import { useRouter } from "next/router";
 
 interface Props {
-  jobs: JobTypes[];
+  jobs?: JobTypes[];
   foundJobs?: JobTypes[];
   setFoundJobs?: Dispatch<SetStateAction<string>> | any;
   name: string;

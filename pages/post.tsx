@@ -6,35 +6,16 @@ import JobForm from "../components/JobForm";
 import SearchInput from "../components/SearchInput/SearchInput";
 import { JobTypes } from "../types/types";
 
-interface Props {
-  jobs: JobTypes[];
-}
-
-const Post = ({ jobs }: Props) => {
+const Post = () => {
   const [name, setName] = useState("");
-  const [foundJobs, setFoundJobs] = useState(jobs);
 
   return (
     <>
       <Header headerBig={false}>
-        <SearchInput
-          jobs={jobs}
-          name={name}
-          setName={setName}
-          foundJobs={foundJobs}
-          setFoundJobs={setFoundJobs}
-          responsive={true}
-        />
+        <SearchInput name={name} setName={setName} responsive={true} />
       </Header>
 
-      <SearchInput
-        jobs={jobs}
-        name={name}
-        setName={setName}
-        foundJobs={foundJobs}
-        setFoundJobs={setFoundJobs}
-        responsive={false}
-      />
+      <SearchInput name={name} setName={setName} responsive={false} />
 
       <JobForm />
     </>
