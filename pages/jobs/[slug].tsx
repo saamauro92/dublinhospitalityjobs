@@ -6,6 +6,7 @@ import Header from "../../components/App/Header";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import { JobTypes } from "../../types/types";
 import { fetchAPI } from "../../utils/utils";
+import { NextSeo } from "next-seo";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
@@ -29,6 +30,15 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
 
   return (
     <>
+      <NextSeo
+        title={`${job.attributes.title} - Dublin Hospitality Jobs`}
+        description=""
+        openGraph={{
+          title: "Dublin Hospitality Jobs",
+          description: "Fresh Dublin Hospitality jobs offers",
+          site_name: "Dublin hospitality jobs",
+        }}
+      />
       <Header headerBig={false}>
         <SearchInput
           jobs={jobs}

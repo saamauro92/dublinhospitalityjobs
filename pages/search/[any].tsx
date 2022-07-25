@@ -4,6 +4,7 @@ import Header from "../../components/App/Header";
 import JobsList from "../../components/JobsList";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import { JobTypes } from "../../types/types";
+import { NextSeo } from "next-seo";
 interface Props {
   jobs: JobTypes[];
 }
@@ -41,6 +42,15 @@ const AnySearch = ({ jobs }: Props) => {
 
   return (
     <>
+      <NextSeo
+        title={`You search for ${router.query.search} - Dublin Hospitality Jobs`}
+        description=""
+        openGraph={{
+          title: "Dublin Hospitality Jobs",
+          description: "Fresh Dublin Hospitality jobs offers",
+          site_name: "Dublin hospitality jobs",
+        }}
+      />
       <Header headerBig={true}>
         <SearchInput
           jobs={jobs}

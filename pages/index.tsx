@@ -5,7 +5,7 @@ import JobsList from "../components/JobsList";
 import SearchInput from "../components/SearchInput/SearchInput";
 import { JobTypes } from "../types/types";
 import { fetchAPI } from "../utils/utils";
-
+import { NextSeo } from "next-seo";
 interface Props {
   jobs: JobTypes[];
 }
@@ -16,6 +16,15 @@ const Home = ({ jobs }: Props) => {
 
   return (
     <>
+      <NextSeo
+        title="Dublin Hospitality Jobs"
+        description="Fresh Dublin Hospitality jobs offers"
+        openGraph={{
+          title: "Dublin Hospitality Jobs",
+          description: "Fresh Dublin Hospitality jobs offers",
+          site_name: "Dublin hospitality jobs",
+        }}
+      />
       <Header headerBig={true}>
         <SearchInput
           jobs={jobs}
