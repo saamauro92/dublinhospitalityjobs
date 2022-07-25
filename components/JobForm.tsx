@@ -113,7 +113,7 @@ const JobForm = (): JSX.Element => {
         <div className="lg:mt-1 lg:mx-auto xl:w-6/12 lg:px-2  mb-20  pb-20 ">
           <div className="mx-4 flex flex-col justify-center py-5  md:mt-20 ">
             <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-blue-600">
-              Post A Job
+              Post a Job
             </h5>
             <p className="text-md font-light leading-relaxed mt-6 mb-4 text-gray-800">
               - You can submit your job description using the form below.
