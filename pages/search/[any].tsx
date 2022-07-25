@@ -70,6 +70,8 @@ const AnySearch = ({ jobs }: Props) => {
         />
       </Header>
 
+      <p className="text-center lg:mt-2">{`You search for "${router.query.search}".  `}</p>
+
       <JobsList foundJobs={foundJobs} />
     </>
   );
