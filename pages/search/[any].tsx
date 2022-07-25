@@ -27,7 +27,7 @@ const AnySearch = ({ jobs }: Props) => {
 
         if (keyword !== "") {
           const results = jobs.filter((job) => {
-            return job.attributes.description
+            return job.attributes.keyword
               .toLowerCase()
               .includes(keyword.toLowerCase());
           });
