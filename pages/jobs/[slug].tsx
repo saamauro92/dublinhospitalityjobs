@@ -66,7 +66,7 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
           {hasMounted && (
             <Markup
               noHtml={false}
-              className="overflow-hidden  max-h-24"
+              className="overflow-hidden text-slater-800   max-h-24"
               content={job.attributes.description}
             />
           )}

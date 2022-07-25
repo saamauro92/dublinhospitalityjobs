@@ -33,13 +33,13 @@ const Job = ({ data, index }: Props): JSX.Element => {
         </Link>
         <div className="flex space-x-2 items-en  items-baseline   ">
           <i className="fas fa-map-marker-alt"></i>
-          <p className="text-sm sm:text-md my-2 capitalize leading-relaxed">
+          <p className="text-sm sm:text-md my-2 capitalize text-slater-800  leading-relaxed">
             {data.attributes.location}
           </p>
         </div>
         <div className="flex space-x-2 items-en  items-baseline ">
           <i className="far fa-clock"></i>
-          <p className=" text-sm sm:text-md my-2 capitalize leading-relaxed">
+          <p className=" text-sm sm:text-md my-2 text-slater-800 capitalize leading-relaxed">
             {data.attributes.rate}
           </p>
         </div>
@@ -50,7 +50,7 @@ const Job = ({ data, index }: Props): JSX.Element => {
 
         <p></p>
         <div className="flex justify-between">
-          <p className=" text-base sm:text-md  my-2 capitalize leading-relaxed">
+          <p className=" text-base sm:text-md text-slater-800  my-2 capitalize leading-relaxed">
             Posted:{" "}
             {<Moment format="DD/MM/YY HH:mm" date={data.attributes.date} />}
           </p>
