@@ -25,7 +25,7 @@ const NavBar = ({ headerBig, jobs }: Props): JSX.Element => {
           >
             <Link href={"/"}>Dublin</Link>
           </h2>
-          <h4
+          <h3
             className={
               headerBig
                 ? "font-semibold text-white text-sm md:text-base lg:text-2xl mb-6 cursor-pointer"
@@ -33,7 +33,7 @@ const NavBar = ({ headerBig, jobs }: Props): JSX.Element => {
             }
           >
             <Link href={"/"}>Hospitality Jobs</Link>
-          </h4>
+          </h3>
         </div>
 
         <div className=" lg:mt-1 h-auto ">
