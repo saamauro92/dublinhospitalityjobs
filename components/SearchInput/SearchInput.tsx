@@ -23,23 +23,7 @@ const SearchInput = ({
   const router = useRouter();
 
   const handleSearch = (e: { preventDefault: () => void }) => {
-    /*     if (router.pathname.includes("/post")) {
-      if (name.length === 0) return router.push("/");
-    }
-    if (router.pathname.includes("/jobs")) {
-      if (name.length === 0) return router.push("/");
-    } */
-    /*     if (router.pathname.includes("/post"))
-      return router.push(
-        { pathname: `/search/${name}`, query: { search: name } },
-        `/search/${name}`
-      ); */
-    /*     if (router.pathname.includes("/jobs"))
-      return router.push(
-        { pathname: `/search/${name}`, query: { search: name } },
-        `/search/${name}`
-      );
- */ if (name.length === 0) return router.push("/");
+    if (name.length === 0) return router.push("/");
     const keyword = name;
 
     if (keyword !== "") {
@@ -51,7 +35,7 @@ const SearchInput = ({
       /*       setFoundJobs(results); */
       router.push(
         { pathname: `/search/${name}`, query: { search: name } },
-        `/search/${name}`
+        `/search?q=${name}`
       );
     } else {
       setFoundJobs(jobs);

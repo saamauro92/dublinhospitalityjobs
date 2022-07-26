@@ -14,15 +14,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
-
-MyApp.getInitialProps = async () => {
-  const jobs = await fetchAPI("/jobs", { populate: "*" });
-
-  // Pass the data to our page via props
-  return {
-    pageProps: {
-      jobs: jobs.data,
-    },
-    revalidate: 1,
-  };
-};

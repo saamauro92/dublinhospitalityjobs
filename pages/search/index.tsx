@@ -5,6 +5,8 @@ import JobsList from "../../components/JobsList";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import { JobTypes } from "../../types/types";
 import { NextSeo } from "next-seo";
+import { GetStaticPaths, GetStaticProps } from "next/types";
+import { fetchAPI } from "../../utils/utils";
 interface Props {
   jobs: JobTypes[];
 }
@@ -17,8 +19,8 @@ const AnySearch = ({ jobs }: Props) => {
 
   useEffect(() => {
     function search() {
-      if (router.query.search) {
-        const searchedWord = router.query.search.toString();
+      if (router.query.q) {
+        const searchedWord = router.query.q.toString();
 
         setParam(searchedWord);
       }
@@ -43,7 +45,7 @@ const AnySearch = ({ jobs }: Props) => {
   return (
     <>
       <NextSeo
-        title={`You search for ${router.query.search} - Dublin Hospitality Jobs`}
+        title={`You search for ${router.query.q} - Dublin Hospitality Jobs`}
         description=""
         openGraph={{
           title: "Dublin Hospitality Jobs",
@@ -70,7 +72,7 @@ const AnySearch = ({ jobs }: Props) => {
         />
       </Header>
 
-      <p className="text-center lg:mt-2">{`You search for "${router.query.search}".  `}</p>
+      <p className="text-center lg:mt-2">{`You search for "${router.query.q}".  `}</p>
 
       <JobsList foundJobs={foundJobs} />
     </>
@@ -78,3 +80,13 @@ const AnySearch = ({ jobs }: Props) => {
 };
 
 export default AnySearch;
+export const getStaticProps: GetStaticProps = async () => {
+  const jobs = await fetchAPI("/jobs", { populate: "*" });
+
+  return {
+    props: {
+      jobs: jobs.data,
+    },
+    revalidate: 1,
+  };
+};
