@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from "react";
-import RichEditor from "../RichEditor";
 
 interface Props {
   setDescription?: Dispatch<SetStateAction<string>> | any;
