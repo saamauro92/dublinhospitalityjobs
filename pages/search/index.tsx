@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useRouter } from "next/router";
-import { useState, useEffect, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import Header from "../../components/App/Header";
 import JobsList from "../../components/JobsList";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import { JobTypes } from "../../types/types";
 import { NextSeo } from "next-seo";
-import { GetStaticPaths, GetStaticProps } from "next/types";
+import { GetStaticProps } from "next/types";
 import { fetchAPI } from "../../utils/utils";
 interface Props {
   jobs: JobTypes[];

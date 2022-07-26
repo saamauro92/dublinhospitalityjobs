@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { JobTypes } from "../types/types";
-import { Markup } from "interweave";
 import { useEffect, useState } from "react";
 import Moment from "react-moment";
 type Props = {

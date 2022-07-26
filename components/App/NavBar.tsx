@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { JobTypes } from "../../types/types";
-import SearchInput from "../SearchInput/SearchInput";
 
 interface Props {
   headerBig?: boolean;
-  jobs?: JobTypes;
 }
 
-const NavBar = ({ headerBig, jobs }: Props): JSX.Element => {
+const NavBar = ({ headerBig }: Props): JSX.Element => {
   return (
     <>
       <nav

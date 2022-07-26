@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import { JobTypes } from "../types/types";
 import Job from "./Job";
 

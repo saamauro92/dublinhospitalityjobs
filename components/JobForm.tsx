@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState } from "react";
 import ContactFields from "./Form/ContactFields";
 import DescriptionFields from "./Form/DescriptionFields";
@@ -7,7 +6,6 @@ import LocationFields from "./Form/LocationFields";
 import Navigation from "./Form/Navigation";
 import SuccessField from "./Form/SuccessField";
 import TitleField from "./Form/TitleField";
-import RichEditor from "./RichEditor";
 
 const JobForm = (): JSX.Element => {
   const [name, setName] = useState("");

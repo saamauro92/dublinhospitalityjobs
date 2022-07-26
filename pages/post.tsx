@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type { GetStaticProps, NextPage } from "next";
+import type { GetStaticProps } from "next";
 import { useState } from "react";
 import Header from "../components/App/Header";
 import JobForm from "../components/JobForm";

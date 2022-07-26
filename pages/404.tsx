@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { NextPage } from "next/types";
 import Header from "../components/App/Header";
-import Layout from "../components/App/Layout";
 
 const ErrorPage: NextPage = (): JSX.Element => {
   return (

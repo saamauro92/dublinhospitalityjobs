@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next/types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "../components/App/Header";
 import JobsList from "../components/JobsList";
 import SearchInput from "../components/SearchInput/SearchInput";

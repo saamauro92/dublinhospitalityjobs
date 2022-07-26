@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import SearchInput from "../SearchInput/SearchInput";
 import NavBar from "./NavBar";
 
 type Props = {
