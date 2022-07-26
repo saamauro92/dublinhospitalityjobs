@@ -11,17 +11,8 @@ interface Props {
 }
 
 const Home = ({ jobs }: Props) => {
-  const [hydrated, setHydrated] = useState(false);
   const [name, setName] = useState("");
   const [foundJobs, setFoundJobs] = useState(jobs);
-
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-  if (!hydrated) {
-    // Returns null on first render, so the client and server match
-    return null;
-  }
 
   return (
     <>

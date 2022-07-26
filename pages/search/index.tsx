@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useRouter } from "next/router";
 import { useState, useEffect, SetStateAction } from "react";
 import Header from "../../components/App/Header";
@@ -45,7 +46,12 @@ const AnySearch = ({ jobs }: Props) => {
   return (
     <>
       <NextSeo
-        title={`You search for ${router.query.q} - Dublin Hospitality Jobs`}
+        title={
+          "You search for" +
+          " " +
+          `${router.query.q}` +
+          " - Dublin Hospitality Jobs"
+        }
         description=""
         openGraph={{
           title: "Dublin Hospitality Jobs",
@@ -72,7 +78,7 @@ const AnySearch = ({ jobs }: Props) => {
         />
       </Header>
 
-      <p className="text-center lg:mt-2">{`You search for "${router.query.q}".  `}</p>
+      <p className="text-center lg:mt-2">You search for "{router.query.q}"</p>
 
       <JobsList foundJobs={foundJobs} />
     </>
