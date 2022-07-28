@@ -43,7 +43,7 @@ const Job = ({ data, index }: Props): JSX.Element => {
           </p>
         </div>
 
-        <p className="text-base sm:text-md font-light leading-relaxed mt-0 mb-4 text-slater-800">
+        <p className="text-base sm:text-md font-light leading-relaxed mt-0 mb-4 text-slater-800 overflow-hidden">
           {data.attributes.description.slice(0, 200) + "..."}
         </p>
 

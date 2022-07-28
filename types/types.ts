@@ -17,6 +17,7 @@ export interface JobTypes {
     slug: string,
     published: boolean;
     keyword: string;
+    howToApply:string;
   
   }
 

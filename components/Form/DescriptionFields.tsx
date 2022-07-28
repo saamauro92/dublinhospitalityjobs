@@ -2,9 +2,13 @@ import { Dispatch, SetStateAction } from "react";
 
 interface Props {
   setDescription?: Dispatch<SetStateAction<string>> | any;
+  description?: string;
 }
 
-const DescriptionFields = ({ setDescription }: Props): JSX.Element => {
+const DescriptionFields = ({
+  description,
+  setDescription,
+}: Props): JSX.Element => {
   return (
     <>
       <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-center text-blue-600">
@@ -19,6 +23,7 @@ const DescriptionFields = ({ setDescription }: Props): JSX.Element => {
           Please enter your job description.
         </label>
         <textarea
+          value={description}
           onChange={(e) => setDescription(e.target.value)}
           className="
              h-[250px]

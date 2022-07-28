@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ContactFields from "./Form/ContactFields";
 import DescriptionFields from "./Form/DescriptionFields";
+import HowToApplyFields from "./Form/HowToApplyFields";
 import JobTypeFields from "./Form/JobTypeFields";
 import LocationFields from "./Form/LocationFields";
 import Navigation from "./Form/Navigation";
@@ -13,6 +14,7 @@ const JobForm = (): JSX.Element => {
   const [location, setLocation] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [howToApply, setHowToApply] = useState("");
   const [type, setType] = useState("Standard");
   const [positionTime, setPositionTime] = useState("Full Time");
   const [promo, setPromo] = useState("");
@@ -37,8 +39,6 @@ const JobForm = (): JSX.Element => {
       setPromo={setPromo}
       key={1}
     />,
-    <LocationFields location={location} setLocation={setLocation} key={1} />,
-
     <TitleField
       title={title}
       setTitle={setTitle}
@@ -46,7 +46,18 @@ const JobForm = (): JSX.Element => {
       positionTime={positionTime}
       setPositionTime={setPositionTime}
     />,
-    <DescriptionFields setDescription={setDescription} key={1} />,
+    <LocationFields location={location} setLocation={setLocation} key={1} />,
+
+    <HowToApplyFields
+      howToApply={howToApply}
+      setHowToApply={setHowToApply}
+      key={1}
+    />,
+    <DescriptionFields
+      description={description}
+      setDescription={setDescription}
+      key={1}
+    />,
   ];
 
   const handleSubmit = () => {
@@ -58,8 +69,11 @@ const JobForm = (): JSX.Element => {
     if (location.length < 2)
       return alert(" Minimum 2 characters in location field");
 
+    if (howToApply.length < 10)
+      return alert("Please write at least 10 characteres ");
     if (description.length < 100)
       return alert("Please write at least 100 characteres ");
+
     setLoading(true);
     fetch("https://dublinhospitalityjobs-backend.herokuapp.com/api/jobs", {
       method: "POST",
@@ -72,6 +86,7 @@ const JobForm = (): JSX.Element => {
         data: {
           title: title,
           description: description,
+          howToApply: howToApply,
           type: type,
           positionTime: positionTime,
           promo: promo,
@@ -89,6 +104,7 @@ const JobForm = (): JSX.Element => {
         setLoading(false);
         setJobSent(true);
         setDescription("");
+        setHowToApply("");
         setName("");
         setType("Standar");
         setPositionTime("Full Time");
@@ -125,14 +141,14 @@ const JobForm = (): JSX.Element => {
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
-                      style={{ width: "20%" }}
+                      style={{ width: "16.6666667%" }}
                     ></div>
                   </div>
                 ) : null || step === 1 ? (
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
-                      style={{ width: "40%" }}
+                      style={{ width: "33.3333333%" }}
                     ></div>
                   </div>
                 ) : null}
@@ -140,18 +156,26 @@ const JobForm = (): JSX.Element => {
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
-                      style={{ width: "60%" }}
+                      style={{ width: "49%" }}
                     ></div>
                   </div>
                 ) : null || step === 3 ? (
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
-                      style={{ width: "80%" }}
+                      style={{ width: "65%" }}
                     ></div>
                   </div>
                 ) : null}
                 {step === 4 ? (
+                  <div className="w-full bg-gray-200 h-1">
+                    <div
+                      className="bg-blue-600 h-1"
+                      style={{ width: "82%" }}
+                    ></div>
+                  </div>
+                ) : null}
+                {step === 5 ? (
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"

@@ -16,7 +16,7 @@ const TitleField = ({
   return (
     <>
       <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-center text-blue-600">
-        Job Title{" "}
+        Job Title / Time{" "}
       </h5>
       <label
         htmlFor="exampleFormControlInput1"

@@ -59,7 +59,7 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
       />
       <div className="md:mt-20 sm:mt-20 lg:mx-auto xl:w-6/12 lg:px-2  h-screen ">
         <div className="mx-4 flex flex-col  justify-center py-5 gap-4 border-b-2 ">
-          <h1 className=" text-xl font-bold text-blue-600 capitalize">
+          <h1 className=" text-xl font-bold text-blue-600 ">
             {job.attributes.title}
           </h1>
 
@@ -68,6 +68,18 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
               noHtml={false}
               className="overflow-hidden text-slater-800   max-h-24"
               content={job.attributes.description}
+            />
+          )}
+          {job.attributes.howToApply && (
+            <h1 className=" text-xl font-bold text-blue-600 capitalize">
+              How To Apply
+            </h1>
+          )}
+          {hasMounted && job.attributes.howToApply && (
+            <Markup
+              noHtml={false}
+              className="overflow-hidden text-slater-800   max-h-24"
+              content={job.attributes.howToApply}
             />
           )}
         </div>
