@@ -47,7 +47,7 @@ const SearchInput = ({
       <div
         className={
           responsive
-            ? "text-center  text-blue-600 font-bold  text-base md:text-2xl pb-2 hidden sm:inline-block"
+            ? "text-center  text-blue-600 font-bold  text-base md:text-2xl pb-2 hidden sm:inline-block "
             : "text-center  text-blue-600 font-bold  md:text-2xl  sm:hidden   "
         }
       >
@@ -55,8 +55,8 @@ const SearchInput = ({
           className={
             router.pathname.includes("/jobs") ||
             router.pathname.includes("/post")
-              ? "px-2 shadow-sm   rounded-tl-md  rounded-bl-md rounded-br-none  rounded-tr-none bg-zinc-100  pl-5 text-gray-600  py-2 my-5   w-[16rem] sm:w-[15rem]  md:w-[24rem] lg:w-[30rem] mt-8 font-thin focus:outline-none "
-              : "px-2 shadow-md rounded-tl-md  rounded-bl-md rounded-br-none  rounded-tr-none pl-5 text-gray-600  w-[16rem] sm:w-[24rem] md:w-[28rem] lg:w-[33rem] py-2   mt-8 font-thin focus:outline-none "
+              ? "px-2 shadow-sm   rounded-tl-md align-baseline rounded-bl-md rounded-br-none  rounded-tr-none bg-zinc-100  pl-5 text-gray-600  py-2 my-5   w-[16rem] sm:w-[15rem]  md:w-[24rem] lg:w-[30rem] mt-8 font-thin focus:outline-none "
+              : "px-2 shadow-md rounded-tl-md align-baseline   rounded-bl-md rounded-br-none  rounded-tr-none pl-5 text-gray-600  w-[16rem] sm:w-[24rem] md:w-[28rem] lg:w-[33rem] py-2   mt-8 font-thin focus:outline-none "
           }
           placeholder="Search job"
           value={name}
@@ -69,8 +69,8 @@ const SearchInput = ({
           className={
             router.pathname.includes("/jobs") ||
             router.pathname.includes("/post")
-              ? "bg-zinc-100 p-2  text-gray-500  sm:inline-block  border-slate-300 shadow-sm rounded-tr-md  rounded-br-md pr-5 "
-              : "bg-white p-2  text-gray-500 rounded-tr-md  rounded-br-md  pr-5 "
+              ? "bg-zinc-100 p-2  align-baseline  text-gray-500  sm:inline-block  border-slate-300 shadow-sm rounded-tr-md  rounded-br-md pr-5 "
+              : "bg-white p-2  align-baseline text-gray-500 rounded-tr-md  rounded-br-md  pr-5 "
           }
         >
           <i className="fas fa-search"></i>
