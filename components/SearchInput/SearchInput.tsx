@@ -70,7 +70,7 @@ const SearchInput = ({
             router.pathname.includes("/jobs") ||
             router.pathname.includes("/post")
               ? "bg-zinc-100 p-2  align-baseline font-normal text-gray-500  sm:inline-block  border-slate-300 shadow-sm rounded-tr-md  rounded-br-md pr-5 "
-              : "bg-white p-2  align-baseline text-gray-500 rounded-tr-md  rounded-br-md  pr-5 "
+              : "bg-white p-2  align-baseline font-normal text-gray-500 rounded-tr-md  rounded-br-md  pr-5 "
           }
         >
           <i className="fas fa-search"></i>
