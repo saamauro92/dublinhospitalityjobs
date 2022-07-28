@@ -7,6 +7,7 @@ import SearchInput from "../../components/SearchInput/SearchInput";
 import { JobTypes } from "../../types/types";
 import { fetchAPI } from "../../utils/utils";
 import { NextSeo } from "next-seo";
+import ReactMarkdown from "react-markdown";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
@@ -57,31 +58,21 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
         setFoundJobs={setFoundJobs}
         responsive={false}
       />
-      <div className="md:mt-20 sm:mt-20 lg:mx-auto xl:w-6/12 lg:px-2  h-screen ">
+      <div className="md:mt-20 sm:mt-20 lg:mx-auto xl:w-6/12 lg:px-2  h-auto pb-20 ">
         <div className="mx-4 flex flex-col  justify-center py-5 gap-4 border-b-2 ">
           <h1 className=" text-xl font-bold text-blue-600 ">
             {job.attributes.title}
           </h1>
 
-          {hasMounted && (
-            <Markup
-              noHtml={false}
-              className="overflow-hidden text-slater-800   max-h-24"
-              content={job.attributes.description}
-            />
-          )}
+          <ReactMarkdown>{job.attributes.description}</ReactMarkdown>
+
           {job.attributes.howToApply && (
             <h1 className=" text-xl font-bold text-blue-600 capitalize">
               How To Apply
             </h1>
           )}
-          {hasMounted && job.attributes.howToApply && (
-            <Markup
-              noHtml={false}
-              className="overflow-hidden text-slater-800   max-h-24"
-              content={job.attributes.howToApply}
-            />
-          )}
+
+          <p> {job.attributes.howToApply}</p>
         </div>
       </div>
     </>
