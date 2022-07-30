@@ -7,6 +7,7 @@ import LocationFields from "./Form/LocationFields";
 import Navigation from "./Form/Navigation";
 import SuccessField from "./Form/SuccessField";
 import TitleField from "./Form/TitleField";
+import Stepper from "./Stepper";
 
 const JobForm = (): JSX.Element => {
   const [name, setName] = useState("");
@@ -127,14 +128,11 @@ const JobForm = (): JSX.Element => {
         <div className="lg:mt-1 lg:mx-auto xl:w-6/12 lg:px-2  mb-20  pb-20 ">
           <div className="mx-4 flex flex-col justify-center py-5  md:mt-20 ">
             <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-blue-600">
-              Post a Job
+              How does it work? Simple!
             </h5>
-            <p className="text-md font-light leading-relaxed mt-6 mb-4 text-gray-800">
-              - You can submit your job description using the form below.
-            </p>
-            <p className="text-md font-light leading-relaxed  mb-4 text-gray-800">
-              - Or you can email us your job to jobs@dublinhospitalityjobs.com.
-            </p>
+
+            <Stepper />
+
             <div className="md:border md:shadow-xl lg:border lg:shadow-xl ">
               <div className="  pt-0 lg:min-h-[520px] flex flex-col justify-between">
                 {step === 0 ? (
@@ -198,6 +196,10 @@ const JobForm = (): JSX.Element => {
                 </div>
               </div>
             </div>
+            {/*             <p className="text-md font-light leading-relaxed mt-8 mb-4 text-gray-800">
+              - You can also email us your job to
+              jobs@dublinhospitalityjobs.com.
+            </p> */}
           </div>
         </div>
       )}
