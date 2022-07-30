@@ -71,8 +71,13 @@ const Post = ({ job, jobs }: Props): JSX.Element => {
               How To Apply
             </h1>
           )}
-
           <p> {job.attributes.howToApply}</p>
+          {job.attributes.location && (
+            <h1 className=" text-xl font-bold text-blue-600 capitalize">
+              Location
+            </h1>
+          )}
+          <p> {job.attributes.location}</p>
         </div>
       </div>
     </>
