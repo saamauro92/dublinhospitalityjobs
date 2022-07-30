@@ -11,14 +11,14 @@ const HowToApplyFields = ({
 }: Props): JSX.Element => {
   return (
     <>
-      <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-center text-blue-600">
+      <h5 className="font-bold leading-tight text-xl mt-0 mb-2 text-center text-blue-600">
         How to Apply{" "}
       </h5>
       <label
         htmlFor="exampleFormControlInput1"
         className="form-label inline-block mb-2 text-gray-700 pt-10"
       >
-        Please write a description on how to apply for this job
+        Please write a description on how to apply for this job.
       </label>
 
       <textarea

@@ -15,7 +15,7 @@ const TitleField = ({
 }: Props): JSX.Element => {
   return (
     <>
-      <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-center text-blue-600">
+      <h5 className="font-bold leading-tight text-xl mt-0 mb-2 text-center text-blue-600">
         Job Title / Time{" "}
       </h5>
       <label

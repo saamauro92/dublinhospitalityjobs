@@ -8,8 +8,8 @@ interface Props {
 const LocationFields = ({ location, setLocation }: Props): JSX.Element => {
   return (
     <>
-      <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-center text-blue-600">
-        Job location{" "}
+      <h5 className="font-bold leading-tight text-xl mt-0 mb-2 text-center text-blue-600">
+        Job Location{" "}
       </h5>
       <label
         htmlFor="exampleFormControlInput1"

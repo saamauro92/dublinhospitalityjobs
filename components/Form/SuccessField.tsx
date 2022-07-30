@@ -10,16 +10,13 @@ const SuccessField = ({ setJobsent }: Props): JSX.Element => {
     <>
       <div className="lg:mt-1 lg:mx-auto xl:w-6/12 lg:px-2 h-screen ">
         <div className="mx-4 flex flex-col justify-center py-5 mt-20 ">
-          <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-blue-600">
-            Thanks, your job has been succesfully sent.
+          <h5 className="font-bold leading-tight text-xl mt-0 mb-2 text-blue-600">
+            Thanks, your job has been succesfully sent to us.
           </h5>
+
           <p className="text-xl font-light leading-relaxed mt-6 mb-4 text-gray-800">
-            You will receive an email with guidance about payment. In case you
-            have used our promo code , you can just dismiss the email.
-          </p>
-          <p className="text-xl font-light leading-relaxed mt-6 mb-4 text-gray-800">
-            Your ad will be review and posted within 24hs after payment is
-            successfully made.
+            Your job will be review and posted within 24hs if no issues found on
+            application.
           </p>
         </div>
         <h5

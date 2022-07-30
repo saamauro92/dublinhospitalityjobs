@@ -16,9 +16,7 @@ const JobForm = (): JSX.Element => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [howToApply, setHowToApply] = useState("");
-  const [type, setType] = useState("Standard");
   const [positionTime, setPositionTime] = useState("Full Time");
-  const [promo, setPromo] = useState("");
   const [loading, setLoading] = useState(false);
   const [jobsent, setJobSent] = useState(false);
 
@@ -33,13 +31,7 @@ const JobForm = (): JSX.Element => {
       setEmail={setEmail}
       key={1}
     />,
-    <JobTypeFields
-      type={type}
-      setType={setType}
-      promo={promo}
-      setPromo={setPromo}
-      key={1}
-    />,
+
     <TitleField
       title={title}
       setTitle={setTitle}
@@ -70,8 +62,7 @@ const JobForm = (): JSX.Element => {
     if (location.length < 2)
       return alert(" Minimum 2 characters in location field");
 
-    if (howToApply.length < 10)
-      return alert("Please write at least 10 characteres ");
+    if (!howToApply) return alert("Please write how to apply for this job ");
     if (description.length < 100)
       return alert("Please write at least 100 characteres ");
 
@@ -88,9 +79,7 @@ const JobForm = (): JSX.Element => {
           title: title,
           description: description,
           howToApply: howToApply,
-          type: type,
           positionTime: positionTime,
-          promo: promo,
           rate: positionTime,
           location: location,
           company: "",
@@ -107,9 +96,7 @@ const JobForm = (): JSX.Element => {
         setDescription("");
         setHowToApply("");
         setName("");
-        setType("Standar");
         setPositionTime("Full Time");
-        setPromo("");
         setLocation("");
         setEmail("");
         setTitle("");
@@ -127,7 +114,7 @@ const JobForm = (): JSX.Element => {
       ) : (
         <div className="lg:mt-1 lg:mx-auto xl:w-6/12 lg:px-2  mb-20  pb-20 ">
           <div className="mx-4 flex flex-col justify-center py-5  md:mt-20 ">
-            <h5 className="font-medium leading-tight text-xl mt-0 mb-2 text-blue-600">
+            <h5 className="font-bold leading-tight text-xl mt-0 mb-2 text-blue-600">
               How does it work? Simple!
             </h5>
 
@@ -139,14 +126,14 @@ const JobForm = (): JSX.Element => {
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
-                      style={{ width: "16.6666667%" }}
+                      style={{ width: "20%" }}
                     ></div>
                   </div>
                 ) : null || step === 1 ? (
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
-                      style={{ width: "33.3333333%" }}
+                      style={{ width: "40%" }}
                     ></div>
                   </div>
                 ) : null}
@@ -154,26 +141,18 @@ const JobForm = (): JSX.Element => {
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
-                      style={{ width: "49%" }}
+                      style={{ width: "60%" }}
                     ></div>
                   </div>
                 ) : null || step === 3 ? (
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
-                      style={{ width: "65%" }}
+                      style={{ width: "80%" }}
                     ></div>
                   </div>
                 ) : null}
                 {step === 4 ? (
-                  <div className="w-full bg-gray-200 h-1">
-                    <div
-                      className="bg-blue-600 h-1"
-                      style={{ width: "82%" }}
-                    ></div>
-                  </div>
-                ) : null}
-                {step === 5 ? (
                   <div className="w-full bg-gray-200 h-1">
                     <div
                       className="bg-blue-600 h-1"
@@ -196,10 +175,6 @@ const JobForm = (): JSX.Element => {
                 </div>
               </div>
             </div>
-            {/*             <p className="text-md font-light leading-relaxed mt-8 mb-4 text-gray-800">
-              - You can also email us your job to
-              jobs@dublinhospitalityjobs.com.
-            </p> */}
           </div>
         </div>
       )}
