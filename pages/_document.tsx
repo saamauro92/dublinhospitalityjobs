@@ -8,6 +8,10 @@ class MyDocument extends Document {
           {/* eslint-disable-next-line */}
 
           <meta charSet="utf-8" />
+          <meta name="geo.region" content="IE-D" />
+          <meta name="geo.placename" content="Dublin" />
+          <meta name="geo.position" content="53.349765;-6.260273" />
+          <meta name="ICBM" content="53.349765, -6.260273" />
 
           <link rel="icon" href="/favicon.ico" />
           <link

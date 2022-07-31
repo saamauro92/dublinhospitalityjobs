@@ -17,11 +17,14 @@ const NavBar = ({ headerBig }: Props): JSX.Element => {
           <h2
             className={
               headerBig
-                ? "text-slate-300 font-semibold  lg:text-4xl cursor-pointer text-base md:text-2xl"
-                : "text-slate-600 font-semibold  lg:text-4xl cursor-pointer text-base md:text-2xl"
+                ? "text-slate-300 font-semibold flex flex-wrap lg:text-4xl cursor-pointer text-base md:text-2xl"
+                : "text-slate-600 font-semibold  flex flex-wrap lg:text-4xl cursor-pointer text-base md:text-2xl"
             }
           >
             <Link href={"/"}>Dublin</Link>
+            <p className=" text-slate-300 md:text-[11px] ml-0.5 md:ml-1 text-[9px]">
+              IRE
+            </p>
           </h2>
           <h3
             className={

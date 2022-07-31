@@ -17,12 +17,13 @@ const Home = ({ jobs }: Props) => {
   return (
     <>
       <NextSeo
-        title="Dublin Hospitality Jobs"
-        description="Fresh Dublin Hospitality jobs offers"
+        title="Dublin Hospitality Jobs - Ireland"
+        description="Fresh Dublin (Ireland) Hospitality jobs offers. Irish hospitality jobs in Dublin"
         openGraph={{
           title: "Dublin Hospitality Jobs",
-          description: "Fresh Dublin Hospitality jobs offers",
-          site_name: "Dublin hospitality jobs",
+          description:
+            "Fresh Dublin (Ireland) Hospitality jobs offers. Irish hospitality jobs in Dublin",
+          site_name: "Dublin hospitality jobs - Ireland",
         }}
       />
       <Header headerBig={true}>
